@@ -1,0 +1,120 @@
+<?php
+class GetModel extends CI_Model{
+
+    // Fetch Website Profile
+    public function getWebProfile()
+    {
+        return $this->db->get('webprofile')->row();
+    }
+
+    // Fetch Enquiries
+    public function getEnquiries()
+    {
+        return $this->db->get('enquiries')->result();
+    }
+
+    // Fetch Blogs by order
+    public function getBlogsByOrder()
+    {
+        $this->db->select('*');
+        $this->db->from('blogs b');
+        $this->db->order_by('bid','desc');
+        return $blogs_arr= $this->db->get()->result();
+    }
+
+    // Fetch featured Blogs by order
+    public function getFeaturedBlogs()
+    {
+        $this->db->select('*');
+        $this->db->from('blogs b');
+        $this->db->where('featured','1');
+        $this->db->order_by('bid','desc');
+        return $this->db->get()->result();
+    }
+
+    // Fetch Announcements
+    public function getAnnouncements()
+    {
+        $this->db->select('*');
+        $this->db->from('announcements');
+        $this->db->order_by('id','desc');
+        return $this->db->get()->result();
+    }
+    
+
+    // Count no. of rows in table 
+    public function record_count($table) 
+    {
+        return $this->db->count_all($table);
+    }
+    
+    // Fetch Blogs by order with limit for pagination
+    public function fetch_blogs($limit, $start)
+    {
+        $this->db->select('*');
+        $this->db->from('blogs b');
+        $this->db->order_by('bid','desc');
+        $this->db->limit($limit, $start);
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+    }
+ 
+    // Fetch blog by id
+    public function getBlogById($id)
+    {
+        $this->db->where('bid', $id);
+        return $this->db->get('blogs')->row();
+    }
+
+    // Fetch blog by id for edit
+    public function getBlogByIdEdit($id)
+    {
+        $this->db->select('*');
+        $this->db->from('blogs b');
+        $this->db->join('blog_categories bc', 'b.categories_id = bc.id','left');
+        $this->db->join('blog_authors ba', 'b.authors_id = ba.id','left');
+        $this->db->where('bid', $id);
+        return $this->db->get()->row();
+    }
+
+    // Fetch all Notice
+    public function getNotices()
+    {
+        return $this->db->order_by('id','desc')
+                        ->get('notice')
+                        ->result();
+    }
+    
+    // Fetch notice with limit
+    public function getNoticesLimit($lim)
+    {
+        return $this->db->order_by('id','desc')
+                        ->limit($lim)
+                        ->get('notice')
+                        ->result();
+    }
+
+    // Fetch Notice by id
+    public function getNoticeById($nid)
+    {
+        return $this->db->where('id',$nid)
+                        ->get('notice')
+                        ->row();
+    }
+
+    // Fetch Admin Profile
+    public function getAdminProfile()
+    {
+        return $this->db->get('users')->row();
+    }
+
+    
+
+}
+?>

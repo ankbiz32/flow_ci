@@ -1,0 +1,50 @@
+
+/* NOTE : Put the label tag below the input/textarea tag */
+
+.float-group{
+    position:relative;
+}
+
+.contact-sec input:focus,
+.contact-sec textarea:focus{
+    box-shadow:none;
+}
+
+.contact-sec input + label{
+    position:absolute; 
+    left:30px; 
+    top:50%;
+    transform: translateY(-50%);
+    transition:all 0.3s; 
+    color:#666; 
+    font-weight:lighter;
+    cursor: text;
+    pointer-events: none;
+    font-size: 14px;
+}
+.contact-sec textarea + label{
+    position:absolute; 
+    left:30px; 
+    top:15px;
+    transition:all 0.3s; 
+    color:#666; 
+    font-weight:lighter;
+    cursor: text;
+    pointer-events: none;
+    font-size: 14px;
+}
+
+
+.contact-sec input:focus ~ label, 
+.contact-sec textarea:focus ~ label,
+.contact-sec .fl-active{
+    left:20px; 
+    top:0px;
+    transform: translateY(-110%);
+    padding:0;
+    color: #999 !important;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+ /* NOTE : Put the label tag below the input/textarea tag */
