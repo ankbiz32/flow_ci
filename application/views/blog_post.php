@@ -9,33 +9,33 @@
     <!-- Schema.org for Google -->
     <meta itemprop="name" content="Flow - Raipur (CG). (+91) 9766720007">
     <meta itemprop="description" content="">
-    <meta itemprop="image" content="assets/images/flow-logo.png">
+    <meta itemprop="image" content="<?=base_url()?>assets/images/flow-logo.png">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Flow - Raipur">
     <meta name="twitter:description" content="">
     <meta name="twitter:site" content="">
-    <meta name="twitter:image:src" content="assets/images/flow-logo.png">
+    <meta name="twitter:image:src" content="<?=base_url()?>assets/images/flow-logo.png">
     <!-- Open Graph general (Facebook, Pinterest & Google+) -->
     <meta name="og:title" content="Flow - Raipur">
     <meta name="og:description" content="">
-    <meta name="og:image" content="assets/images/flow-logo.png">
+    <meta name="og:image" content="<?=base_url()?>assets/images/flow-logo.png">
     <meta name="og:url" content="https://www.flowmenow.com/">
     <meta name="og:site_name" content="Flow">
     <meta name="og:type" content="website">
 
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="assets/images/favicon.png" sizes="32x32" type="image/png">
+    <link rel="shortcut icon" href="<?=base_url()?>assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="<?=base_url()?>assets/images/favicon.png" sizes="32x32" type="image/png">
 
     <title>Flow</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
-    <link rel="stylesheet" href="assets/css/float_label.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="assets/css/nav.css">
-    <link rel="stylesheet" href="assets/css/style_ref.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/float_label.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/nav.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/style_ref.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
@@ -44,7 +44,7 @@
         <div class="blur-bg" id="blurbg"></div>
         <div class="container wrapper d-flex justify-content-between align-items-center">
             <a href="" class="logo">
-                <img src="./assets/images/flow-logo.png" alt="" height="90">
+                <img src="<?=base_url()?>assets/images/flow-logo.png" alt="" height="90">
             </a>
             <input type="checkbox" id="navcheck" role="button" title="menu">
             <label for="navcheck" aria-hidden="true" title="menu" class="navchecklabel d-flex align-items-center">
@@ -83,14 +83,15 @@
         </div>
     </header>
 
-    <section class="hero-sec">
+    <section class="hero-sec blog-post-hero">
+        <div class="bg-img" style="background:linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)) , url('<?=base_url()?>assets/images/2.jpg')"></div>
         <div class="container">
             <div class="intro">
-                <h1>Welcome to our blog</h1>
+                <h1>Heading for the blog will be shown here</h1>
                 <h4></h4>
-                <p class="mt-4 mb-5 mx-auto">It all began with a question, ‘What was something that was not a part of my education, but I wish it was!’</p>
-                <a href="#about" id="nextPage" class="link">
-                    <small class="text-dark">READ MORE</small>
+                <p class="mt-4 mb-5 mx-auto">Short description of the blog will be here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, cum quae! Enim eius asperiores pariatur!</p>
+                <a href="#post" id="nextPage" class="link">
+                    <small class="text-dark">READ THIS BLOG</small>
                     <div class="mouse">
                         <span class="m_scroll_arrows unu"></span>
                         <span class="m_scroll_arrows doi"></span>
@@ -100,10 +101,7 @@
             </div>
         </div>
         <div class="blobs">
-            <div class="blob-baige"></div>
             <div class="blob-pink"></div>
-            <div class="blob-teal"></div>
-            <div class="blob-yellow"></div>
         </div>
     </section>
 
@@ -113,163 +111,50 @@
         }
     </style>
 
-    <main class="all-blogs">
+    <main class="all-blogs" id="post">
         <div class="container">
             <div class="row ">
                 <div class="col-md-8">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a href=""  class="blog-card card mb-4 border-0" style="color:#222">
-                                <img class="card-img-top" src="assets/images/1.jpg" style="object-fit: cover;" height="200" alt="image">
-                                <div class="card-body">
-                                    <h5 class="mb-2"><strong>Heading for the blog will be shown here</strong></h5>
-                                    <p class="card-text text-black">This is a wider card with supporting text below as a natural. . .</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-dark">Read more</button>
+                    <div class="post-content pr-sm-5">
+                        <h2 class="mb-3"><strong>Heading for the blog will be shown here. Lorem ipsum dolor sit amet consectetur.</strong></h2>
+                        <p>Short description of the blog will be here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, cum quae! Enim eius asperiores pariatur!</p>
+                        <div class="row mb-4">
+                            <div class="col-sm-5">
+                                <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; Posted on : 10-02-2021</small></div>
+                                <div class="col-sm-7 mt-sm-0 mt-3 text-sm-right">
+                                    <div class="a2a">
+                                        <a href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fexample.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/facebook.svg" width="32" height="32" style="background-color:#333"></a>
+                                        <a href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fexample.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/twitter.svg" width="32" height="32" style="background-color:#333"></a>
+                                        <a href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fexample.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/whatsapp.svg" width="32" height="32" style="background-color:#333"></a>
+                                        <a href="https://www.addtoany.com/add_to/telegram?linkurl=http%3A%2F%2Fexample.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/telegram.svg" width="32" height="32" style="background-color:#333"></a>
+                                        <a href="https://www.addtoany.com/add_to/copy_link?linkurl=http%3A%2F%2Fexample.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/link.svg" width="32" height="32" style="background-color:#333"></a>
                                     </div>
-                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
+                                    <!-- <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="http://example.com">
+                                        <a class="a2a_button_facebook"></a>
+                                        <a class="a2a_button_twitter"></a>
+                                        <a class="a2a_button_email"></a>
+                                        <a class="a2a_button_whatsapp"></a>
+                                        <a class="a2a_button_telegram"></a>
+                                        <a class="a2a_button_copy_link"></a>
                                     </div>
+                                    <script>
+                                        var a2a_config = a2a_config || {};
+                                        a2a_config.onclick = 1;
+                                    </script>
+                                    <script async src="https://static.addtoany.com/menu/page.js"></script> -->
                                 </div>
-                            </a>
                         </div>
-                        <div class="col-md-6">
-                            <a href=""  class="blog-card card mb-4 border-0" style="color:#222">
-                                <img class="card-img-top" src="assets/images/1.jpg" style="object-fit: cover;" height="200" alt="image">
-                                <div class="card-body">
-                                    <h5 class="mb-2"><strong>Heading for the blog will be shown here</strong></h5>
-                                    <p class="card-text text-black">This is a wider card with supporting text below as a natural. . .</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-dark">Read more</button>
-                                    </div>
-                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href=""  class="blog-card card mb-4 border-0" style="color:#222">
-                                <img class="card-img-top" src="assets/images/1.jpg" style="object-fit: cover;" height="200" alt="image">
-                                <div class="card-body">
-                                    <h5 class="mb-2"><strong>Heading for the blog will be shown here</strong></h5>
-                                    <p class="card-text text-black">This is a wider card with supporting text below as a natural. . .</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-dark">Read more</button>
-                                    </div>
-                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href=""  class="blog-card card mb-4 border-0" style="color:#222">
-                                <img class="card-img-top" src="assets/images/1.jpg" style="object-fit: cover;" height="200" alt="image">
-                                <div class="card-body">
-                                    <h5 class="mb-2"><strong>Heading for the blog will be shown here</strong></h5>
-                                    <p class="card-text text-black">This is a wider card with supporting text below as a natural. . .</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-dark">Read more</button>
-                                    </div>
-                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href=""  class="blog-card card mb-4 border-0" style="color:#222">
-                                <img class="card-img-top" src="assets/images/1.jpg" style="object-fit: cover;" height="200" alt="image">
-                                <div class="card-body">
-                                    <h5 class="mb-2"><strong>Heading for the blog will be shown here</strong></h5>
-                                    <p class="card-text text-black">This is a wider card with supporting text below as a natural. . .</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-dark">Read more</button>
-                                    </div>
-                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href=""  class="blog-card card mb-4 border-0" style="color:#222">
-                                <img class="card-img-top" src="assets/images/1.jpg" style="object-fit: cover;" height="200" alt="image">
-                                <div class="card-body">
-                                    <h5 class="mb-2"><strong>Heading for the blog will be shown here</strong></h5>
-                                    <p class="card-text text-black">This is a wider card with supporting text below as a natural. . .</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-dark">Read more</button>
-                                    </div>
-                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href=""  class="blog-card card mb-4 border-0" style="color:#222">
-                                <img class="card-img-top" src="assets/images/1.jpg" style="object-fit: cover;" height="200" alt="image">
-                                <div class="card-body">
-                                    <h5 class="mb-2"><strong>Heading for the blog will be shown here</strong></h5>
-                                    <p class="card-text text-black">This is a wider card with supporting text below as a natural. . .</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-dark">Read more</button>
-                                    </div>
-                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href=""  class="blog-card card mb-4 border-0" style="color:#222">
-                                <img class="card-img-top" src="assets/images/1.jpg" style="object-fit: cover;" height="200" alt="image">
-                                <div class="card-body">
-                                    <h5 class="mb-2"><strong>Heading for the blog will be shown here</strong></h5>
-                                    <p class="card-text text-black">This is a wider card with supporting text below as a natural. . .</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-dark">Read more</button>
-                                    </div>
-                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href=""  class="blog-card card mb-4 border-0" style="color:#222">
-                                <img class="card-img-top" src="assets/images/1.jpg" style="object-fit: cover;" height="200" alt="image">
-                                <div class="card-body">
-                                    <h5 class="mb-2"><strong>Heading for the blog will be shown here</strong></h5>
-                                    <p class="card-text text-black">This is a wider card with supporting text below as a natural. . .</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-dark">Read more</button>
-                                    </div>
-                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href=""  class="blog-card card mb-4 border-0" style="color:#222">
-                                <img class="card-img-top" src="assets/images/1.jpg" style="object-fit: cover;" height="200" alt="image">
-                                <div class="card-body">
-                                    <h5 class="mb-2"><strong>Heading for the blog will be shown here</strong></h5>
-                                    <p class="card-text text-black">This is a wider card with supporting text below as a natural. . .</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-dark">Read more</button>
-                                    </div>
-                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                        <img class="post-img" src="<?=base_url()?>assets/images/2.jpg" alt="">
+                        <article class="mt-4 mb-5">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, itaque. Voluptatibus, rerum! Nobis eveniet in voluptatibus reprehenderit saepe deserunt atque fugit consectetur quo est? Necessitatibus ipsum facere delectus iusto temporibus?</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt perferendis accusamus minima aspernatur eligendi consectetur consequuntur et fugit, sed doloremque!</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet maxime ab doloremque recusandae a animi ipsa ut consequuntur, repudiandae inventore vero ratione minima repellendus perspiciatis dolorum libero. Officia error sapiente magni adipisci placeat atque expedita modi unde, dignissimos iure vel quibusdam alias maxime reiciendis illum tempora nam id! Repudiandae omnis commodi aut quos reprehenderit sunt et! Ducimus blanditiis iure omnis, sequi consequatur ut fuga sint illum ipsa porro, quidem commodi ea rem? Laboriosam, in repellat veniam recusandae laborum, voluptates nobis autem accusantium voluptas consectetur pariatur dolorum. Molestias facere aut veniam? Nihil quibusdam ut nobis consequatur accusamus impedit totam consectetur facere temporibus error vero tempora, modi et corrupti hic quod, voluptate laudantium dicta sequi perspiciatis! Delectus perferendis veniam odit unde nulla!</p>
+                        </article>
+
+                        <a href="" class="sec-btn back-btn">← Back to blogs</a>
                     </div>
                 </div>
+
                 <div class="aside col-md-4 pr-sm-0">
                     <div class="card">
                         <div class="card-title mb-2">
@@ -277,28 +162,28 @@
                         </div>
                         <div class="card-body p-0">
                             <a href="" class="card-text mb-3 px-3 d-flex flex-row flex-nowrap align-items-start">
-                                <img src="assets/images/2.jpg" alt="" width="60" height="60" style="object-fit: cover;">
+                                <img src="<?=base_url()?>assets/images/2.jpg" alt="" width="60" height="60" style="object-fit: cover;">
                                 <div class="content ml-3">
                                     <h6 class="mb-1">Lorem ipsum, dolor sit amet co adipisicing elit. Dolorem, similique!</h6>
                                     <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
                                 </div>
                             </a>
                             <a href="" class="card-text mb-3 px-3 d-flex flex-row flex-nowrap align-items-start">
-                                <img src="assets/images/2.jpg" alt="" width="60" height="60" style="object-fit: cover;">
+                                <img src="<?=base_url()?>assets/images/2.jpg" alt="" width="60" height="60" style="object-fit: cover;">
                                 <div class="content ml-3">
                                     <h6 class="mb-1">Lorem ipsum, dolor sit amet co adipisicing elit. Dolorem, similique!</h6>
                                     <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
                                 </div>
                             </a>
                             <a href="" class="card-text mb-3 px-3 d-flex flex-row flex-nowrap align-items-start">
-                                <img src="assets/images/2.jpg" alt="" width="60" height="60" style="object-fit: cover;">
+                                <img src="<?=base_url()?>assets/images/2.jpg" alt="" width="60" height="60" style="object-fit: cover;">
                                 <div class="content ml-3">
                                     <h6 class="mb-1">Lorem ipsum, dolor sit amet co adipisicing elit. Dolorem, similique!</h6>
                                     <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
                                 </div>
                             </a>
                             <a href="" class="card-text mb-3 px-3 d-flex flex-row flex-nowrap align-items-start">
-                                <img src="assets/images/2.jpg" alt="" width="60" height="60" style="object-fit: cover;">
+                                <img src="<?=base_url()?>assets/images/2.jpg" alt="" width="60" height="60" style="object-fit: cover;">
                                 <div class="content ml-3">
                                     <h6 class="mb-1">Lorem ipsum, dolor sit amet co adipisicing elit. Dolorem, similique!</h6>
                                     <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
@@ -358,7 +243,7 @@
                     </form>
                </div>
                <div class="col-sm-5 image mb-sm-0 mb-5">
-                   <img src="./assets/images/5.png" alt="">
+                   <img src="<?=base_url()?>assets/images/5.png" alt="">
                </div>
             </div>
         </div>
@@ -366,7 +251,7 @@
 
     <section class="newsletter">
         <div class="env">
-            <img src="assets/images/newsletter.png" alt="">
+            <img src="<?=base_url()?>assets/images/newsletter.png" alt="">
         </div>
         <div class="container">
             <div class="row align-items-center">
@@ -390,7 +275,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-2 mb-sm-0 mb-5">
-                    <img src="./assets/images/flow-logo.png" alt="">
+                    <img src="<?=base_url()?>assets/images/flow-logo.png" alt="">
                 </div>
                 <div class="col-sm-6 mb-sm-0 mb-5">
                     <h5 class="mb-sm-4 mb-3">TAP INTO THE FLOW AT :</h5>
@@ -474,9 +359,9 @@
 
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/float_label.js"></script>
-    <script src="./assets/js/spotlight.bundle.js"></script>
-    <script src="./assets/js/app.js"></script>
+    <script src="<?=base_url()?>assets/js/owl.carousel.min.js"></script>
+    <script src="<?=base_url()?>assets/js/float_label.js"></script>
+    <script src="<?=base_url()?>assets/js/spotlight.bundle.js"></script>
+    <script src="<?=base_url()?>assets/js/app.js"></script>
 </body>
 </html>

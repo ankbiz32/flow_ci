@@ -1295,6 +1295,82 @@ footer hr {
   border-radius: 6px;
 }
 
+
+
+.all-blogs{
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+.all-blogs .blog-card{
+  border-radius: 10px;
+  transition: 0.4s;
+  overflow: hidden;
+}
+
+.all-blogs .blog-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.all-blogs .blog-card:active{
+  transform: translateY(0px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0);
+}
+
+
+.aside .card{
+  position: sticky !important;
+  top: 75px !important;
+}
+.aside .card{
+  border-radius: 10px;
+  overflow: hidden;
+}
+.aside .card a{
+  color:#222;
+  transition: 0.3s;
+}
+.aside .card a h6{
+  font-size: 14px;
+}
+.aside .card a:hover{
+  color:#222;
+  transform: translateX(3px);
+}
+
+.hero-sec.blog-post-hero {
+  position: relative;
+}
+.hero-sec.blog-post-hero .intro h1{
+  font-size: 40px !important;
+}
+.hero-sec.blog-post-hero .bg-img{
+  position: absolute;
+  top: 0;left: 0;right: 0;bottom: 0;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  z-index: -1;
+}
+
+.a2a a img{
+  transform: scale(0.76);
+}
+.a2a img{
+  border-radius:5px !important;
+}
+
+.post-content .post-img{
+  width: 100%;
+}
+
+.post-content .back-btn{
+  color:#00574F;
+  border-color: #00574F;
+}
+
+
+
+
 @media (max-width: 780px) {
   .wrapper {
     padding: 0 20px;

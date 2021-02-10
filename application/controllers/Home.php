@@ -44,21 +44,7 @@ class Home extends MY_Controller {
 
 	public function blog_post($id)
 	{
-		$profile=$this->fetch->getWebProfile();
-		$blogs=$this->fetch->getFeaturedBlogs();
-		$ann=$this->fetch->getNotices();
-		$recent['results']=$this->fetch->getBlogsByOrder();
-		$blog_post=$this->fetch->getBlogById($id);
-		$this->load->view('header',['profile'=>$profile , 
-									'featblogs' => $blogs,
-									'ann' => $ann,
-									'blogData' => $recent,
-									'blog_post' => $blog_post
-									]);
-		$this->load->view('blogHeader');
-		$this->load->view('blog-post');
-		$this->load->view('blogFooter');
-		$this->load->view('footer');
+		$this->load->view('blog_post');
 	}
 
 	public function categories()
