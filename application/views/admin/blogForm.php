@@ -29,22 +29,28 @@
                 <div class="card-body">
                     <form role="form" method="post" action="<?= isset($blog) ? base_url('Edit/Blog/'.$blog->bid) : base_url('Add/Blog') ?>" enctype="multipart/form-data">
                         <div class="row mb-4">
-                            <div class="input-group col-md-6 mr-3">
+                            <div class="input-group col-md-6 mr-sm-5">
                                 <label for="img" class="text-sm mr-2 pt-2">Choose:</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="img" name="img" <?= isset($blog) ? '' : 'required' ?>>
                                     <label class="custom-file-label" for="customFile">Choose image</label>
                                 </div>
                             </div>
-                            <div class="input-group col-md-3">
-                                <label for="featured" class="mr-1 text-sm pt-2">Featured:</label>
-                                <input type="checkbox" <?php if(isset($blog) AND $blog->featured=='1'){echo 'checked';}?> name="featured" id="featured" value='1' style="width:20px; height:20px; margin-top:10px;">
+                            <div class="input-group col-md-4 pl-sm-5">
+                                <label for="date" class="text-sm mr-2 pt-2">Date:</label>
+                                <input type="date" value="<?= isset($blog) ? date('Y-m-d',strtotime($blog->date)) : '' ?>" class="form-control" name="date" id="date" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <label for="heading" class="text-sm mr-2 pt-2">Heading:</label>
                                 <input type="text" value="<?= isset($blog) ? $blog->heading : '' ?>" class="form-control" name="heading" id="heading" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="short_descr" class="text-sm mr-2 pt-2">Short description:</label>
+                                <input type="text" value="<?= isset($blog) ? $blog->short_descr : '' ?>" class="form-control" name="short_descr" id="short_descr" required>
                             </div>
                         </div>
                         <div class="row">

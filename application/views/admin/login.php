@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>TechBlog Admin | Log in</title>
+  <title>Flow Admin | Log in</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="shortcut icon" href="<?=base_url()?>assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="<?=base_url()?>assets/images/favicon.png" sizes="32x32" type="image/png">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
   <!-- Theme style -->
@@ -17,9 +18,8 @@
 <body class="hold-transition login-page ">
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?=base_url()?>" target="_blank"><img src="<?=base_url()?>assets/images/rrslogo.png" height="80" alt="Ramraj Services Logo"></a> <br>
-      <b>Admin</b> <br>
-       TechBlog
+    <a href="<?=base_url()?>" target="_blank"><img src="<?=base_url()?>assets/images/flow-logo.png" height="100" alt="Logo"></a> <br> <br>
+      <b><small>Admin</small></b>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -54,7 +54,7 @@
       </form>
 
       <p class="mb-1 mt-3">
-        <a href="#">Forgot password ?</a>
+        <!-- <a href="#">Forgot password ?</a> -->
       </p>
       <?php if(isset($errors)) : ?>
         <h6 class="alert alert-danger mt-4"><?= $errors ?></h6>

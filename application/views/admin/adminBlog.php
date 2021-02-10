@@ -34,21 +34,17 @@
                   <thead>
                     <tr>
                       <th>Post id</th>
-                      <th>Heading</th>
-                      <th>Content</th>
                       <th>Image</th>
+                      <th>Heading</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php foreach ($blogs as $blog){?>
                       <tr>
-                        <td class="text-center"><?=$blog->bid?> <br> <?= $blog->featured=='1' ? '<span class="badge badge-xs badge-info">Featured</span>' : '' ?> </td>
-                        <td><?=$blog->heading?></td>
-                        <td><?=substr($blog->content, 0, 100)?>. . . . . <br> 
-                            <span class="text-xs text-muted"><i class="fa fa-calendar-alt"></i> <?=$datetime=date("d-m-Y",strtotime($blog->date))?></span> &emsp;&emsp;
-                        </td>
+                        <td class="text-center"><?=$blog->bid?> </td>
                         <td><img src="<?=base_url()?>assets/images/<?=$blog->img?>" alt="img" height="80"></td>
+                        <td><?=$blog->heading?></td>
                         <td>
                           <a href="<?=base_url('Delete/Blog/'.$blog->bid)?>" onclick="confirmation(event)" class="btn del-btn btn-danger mb-1" title="Delete Blog"><i class="fa fa-trash-alt"></i></a>
                           <a href="<?=base_url('Admin/editBlogForm/'.$blog->bid)?>" class="btn btn-primary mb-1" title="Edit Blog"><i class="fa fa-edit"></i></a>

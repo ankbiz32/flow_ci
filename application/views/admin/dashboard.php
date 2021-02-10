@@ -32,24 +32,26 @@
                 <table id="bookdt" class="table table-bordered table-hover" style="width:100%;">
                   <thead>
                     <tr>
-                      <th>Enq. Date</th>
+                      <th>Enq. No</th>
+                      <th>Date</th>
                       <th>Name</th>
+                      <th>Organisation name</th>
                       <th>E-mail</th>
                       <th>Phone</th>
-                      <th>Purpose</th>
-                      <th>Status</th>
+                      <th>Message</th>
                     </tr>
                   </thead>
                   <tbody>
                     <!-- display Enquiries-->
                     <?php foreach($enq as $enqui){?>
                       <tr>
+                        <td><?=$enqui->id?></td>
                         <td><?=date("d-m-Y",strtotime("$enqui->date"))?></td>
                         <td><?=$enqui->name?></td>
+                        <td><?=$enqui->org_name?></td>
                         <td><?=$enqui->email?></td>
                         <td><?=$enqui->phone?></td>
                         <td><?=$enqui->message?></td>
-                        <td><?= $enqui->status=='new' ? '<a href="'.base_url('Edit/enqStatus/').$enqui->id.'" class="badge badge-danger">'.$enqui->status.'</a>' : $enqui->status?></td>
                       </tr>
                     <?php }?>
                   </tbody>

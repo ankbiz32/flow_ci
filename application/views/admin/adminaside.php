@@ -3,7 +3,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?=base_url('Admin')?>" class="brand-link ml-1">
-      <span class="brand-text text-lg"><img src="<?=base_url('assets/images/logo_adm.png')?>" alt="" height="70px" class=""> <strong class="ml-2">Admin </strong>Panel</span>
+      <span class="brand-text text-lg"><img src="<?=base_url('assets/images/logo-image.png')?>" alt="" height="70px" class=""> <strong class="ml-2">Admin </strong>Panel</span>
     </a>
     <!-- Sidebar -->
     <div class="sidebar">
@@ -23,7 +23,7 @@
           <li class="nav-item">
             <a href="<?=base_url('Admin')?>" class="nav-link <?php if($this->uri->segment(1)=="Admin" AND $this->uri->segment(2)=="" AND $this->uri->segment(3)==""){echo ' CustomActive';}?> >">
               <i class="fas fa-columns nav-icon"></i>
-              <p>Dashboard</p>
+              <p>Enquiries</p>
             </a>
           </li>
 
@@ -35,16 +35,37 @@
           </li>
 
           <li class="nav-item">
+            <a href="<?=base_url('Admin/events')?>" class="nav-link <?php if($this->uri->segment(2)=="events"){echo ' CustomActive';}?>">
+              <i class="fas fa-calendar-alt nav-icon"></i>
+              <p>Events</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="<?=base_url('Admin/feedbacks')?>" class="nav-link <?php if($this->uri->segment(2)=="feedbacks"){echo ' CustomActive';}?>">
+              <i class="fas fa-comment nav-icon"></i>
+              <p>Feedbacks</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="<?=base_url('Admin/gallery')?>" class="nav-link <?php if($this->uri->segment(2)=="gallery"){echo ' CustomActive';}?>">
+              <i class="fas fa-image nav-icon"></i>
+              <p>Gallery</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="<?=base_url('Admin/Announcement')?>" class="nav-link <?php if($this->uri->segment(2)=="Announcement"){echo ' CustomActive';}?>">
               <i class="fas fa-bullhorn nav-icon"></i>
-              <p>Announcements</p>
+              <p>Notice</p>
             </a>
           </li>
 
           <li class="nav-item">
             <a href="<?=base_url('Admin/webProfile')?>" class="nav-link <?php if($this->uri->segment(2)=="webProfile"){echo ' CustomActive';}?>">
               <i class="fa fa-globe nav-icon"></i>
-              <p>TechBlog Web profile</p>
+              <p>FLOW Web profile</p>
             </a>
           </li>
 
