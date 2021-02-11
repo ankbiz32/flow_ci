@@ -92,7 +92,7 @@
                     </div>
                     <div class="form-group">
                         <label for="address_line1">Address:</label>
-                        <textarea class="form-control" name="address_line1" id="address_line1" rows="5"><?=nl2br($profile->address) ?></textarea>
+                        <textarea class="form-control" name="address" id="address_line1" rows="5"><?=nl2br($profile->address) ?></textarea>
                     </div>
                   </div>
                   <div class="col">
@@ -106,7 +106,7 @@
                     </div>
                     <div class="form-group">
                         <label for="twitterlink">LinkedIn Link:</label>
-                        <input type="url" class="form-control" name="twitterlink" id="twitterlink" value="<?=$profile->linkedinlink;?>" required>
+                        <input type="url" class="form-control" name="linkedinlink" id="linkedinlink" value="<?=$profile->linkedinlink;?>" required>
                     </div>
                   </div>
           </div>

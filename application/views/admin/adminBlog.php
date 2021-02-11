@@ -20,7 +20,7 @@
             <div class="card">
               <div class="card-header row">
                 <h2 class="card-title">Your blogs:</h2> <br>
-                <a href="<?=base_url('Admin/addBlogForm')?>" class="btn btn-primary btn-sm ml-auto">+Add new Blog</a>
+                <a href="<?=base_url('Add/blog')?>" class="btn btn-primary btn-sm ml-auto">+Add new Blog</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -30,6 +30,7 @@
                       <th>Blog no.</th>
                       <th>Image</th>
                       <th>Heading</th>
+                      <th>Posted on</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -39,9 +40,10 @@
                         <td class="text-center"><?=$blog->id?> </td>
                         <td><img src="<?=base_url()?>assets/images/<?=$blog->img?>" alt="img" height="80"></td>
                         <td><?=$blog->heading?></td>
+                        <td><?=date('d-m-Y',strtotime($blog->date))?></td>
                         <td>
-                          <a href="<?=base_url('Delete/Blog/'.$blog->id)?>" onclick="confirmation(event)" class="btn btn-sm del-btn btn-danger mb-1" title="Delete Blog"><i class="fa fa-trash-alt"></i></a>
-                          <a href="<?=base_url('Admin/editBlogForm/'.$blog->id)?>" class="btn btn-sm btn-primary mb-1" title="Edit Blog"><i class="fa fa-edit"></i></a>
+                          <a href="<?=base_url('Delete/blog/'.$blog->id)?>" onclick="confirmation(event)" class="btn btn-sm del-btn btn-danger mb-1" title="Delete Blog"><i class="fa fa-trash-alt"></i></a>
+                          <a href="<?=base_url('Edit/blog/'.$blog->id)?>" class="btn btn-sm btn-primary mb-1" title="Edit Blog"><i class="fa fa-edit"></i></a>
                         </td>
                       </tr>
                     <?php }?>

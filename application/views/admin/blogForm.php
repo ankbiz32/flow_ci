@@ -26,35 +26,39 @@
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card">
                 <div class="card-body">
-                    <form role="form" method="post" action="<?= isset($blog) ? base_url('Edit/Blog/'.$blog->id) : base_url('Add/Blog') ?>" enctype="multipart/form-data">
+                    <form role="form" method="post" action="<?= isset($blog) ? base_url('Edit/updateBlog/'.$blog->id) : base_url('Add/saveBlog') ?>" enctype="multipart/form-data">
+                        
+                     <?php if(isset($blog)){?>
+                        <p><strong>Current image :</strong> <img src="<?=base_url('assets/images/').$blog->img?>" alt="" width="90"></p>   
+                     <?php }?>   
                         <div class="row mb-4">
                             <div class="input-group col-md-6 mr-sm-5">
-                                <label for="img" class="text-sm mr-2 pt-2">Choose:</label>
+                                <label for="img" class="text-sm mr-2 pt-2">Image <?= isset($blog) ? '' : '<span class="text-danger">*</span>' ?> :</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="img" name="img" <?= isset($blog) ? '' : 'required' ?>>
                                     <label class="custom-file-label" for="customFile">Choose image</label>
                                 </div>
                             </div>
                             <div class="input-group col-md-4 pl-sm-5">
-                                <label for="date" class="text-sm mr-2 pt-2">Date:</label>
+                                <label for="date" class="text-sm mr-2 pt-2">Date <span class="text-danger">*</span> :</label>
                                 <input type="date" value="<?= isset($blog) ? date('Y-m-d',strtotime($blog->date)) : '' ?>" class="form-control" name="date" id="date" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <label for="heading" class="text-sm mr-2 pt-2">Heading:</label>
+                                <label for="heading" class="text-sm mr-2 pt-2">Heading <span class="text-danger">*</span> :</label>
                                 <input type="text" value="<?= isset($blog) ? $blog->heading : '' ?>" class="form-control" name="heading" id="heading" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <label for="short_descr" class="text-sm mr-2 pt-2">Short description:</label>
-                                <input type="text" value="<?= isset($blog) ? $blog->short_descr : '' ?>" class="form-control" name="short_descr" id="short_descr" required>
+                                <label for="short_descr" class="text-sm mr-2 pt-2">Short description (optional) :</label>
+                                <input type="text" value="<?= isset($blog) ? $blog->short_descr : '' ?>" class="form-control" name="short_descr" id="short_descr">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <label for="editor" class="text-sm mr-2 pt-2">Blog content:</label>
+                                <label for="editor" class="text-sm mr-2 pt-2">Blog content <span class="text-danger">*</span> :</label>
                                 <textarea name="content" id="editor"  rows="10" class="form-control"><?= isset($blog) ? $blog->content : '' ?></textarea>
                             </div>
                         </div>
@@ -87,7 +91,9 @@
     });
 
     $(document).ready(function() {
-        $('#editor').summernote();
+        $('#editor').summernote({
+            height:500
+        });
     });
 </script>
 

@@ -59,9 +59,9 @@ class Delete extends MY_Controller {
         }
 
 
-        public function Blog($id)
+        public function blog($id)
         {
-            $blogimg= $this->fetch->getBlogById($id);
+            $blogimg= $this->fetch->getInfoById('blogs','id',$id);
             $path= 'assets/images/'.$blogimg->img;
             unlink("$path");
             $status= $this->delete->deleteBlog($id);

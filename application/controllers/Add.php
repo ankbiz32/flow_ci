@@ -10,45 +10,58 @@ class Add extends MY_Controller {
                 $this->load->model('GetModel','fetch');
         }
 
-        public function Blog()
+        
+        public function blog()        
         {
-            // Image upload and saving name
-            $path ='assets/images';
-            $initialize = array(
-                "upload_path" => $path,
-                "allowed_types" => "jpg|jpeg|png|bmp|webp|gif",
-                "remove_spaces" => TRUE
-            );
-            $this->load->library('upload', $initialize);
-            if (!$this->upload->do_upload('img')) {
-                $this->session->set_flashdata('failed',$this->upload->display_errors());
-            } else {
-                $imgdata = $this->upload->data();
-                $imagename = $imgdata['file_name'];
-            } 
+                $this->load->view('admin/adminheader'); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/blogForm'); 
+                $this->load->view('admin/adminfooter');  
+        }
+        
+        public function saveBlog()
+        {
+            $this->form_validation->set_rules('heading', 'Heading', 'required');
+            $this->form_validation->set_rules('date', 'Date', 'required');
+            $this->form_validation->set_rules('content', 'Content', 'required');
+            
+            if($this->form_validation->run() == true){
+                // Image upload and saving name
+                $path ='assets/images';
+                $initialize = array(
+                    "upload_path" => $path,
+                    "allowed_types" => "jpg|jpeg|png|bmp|webp|gif",
+                    "remove_spaces" => TRUE
+                );
+                $this->load->library('upload', $initialize);
+                if (!$this->upload->do_upload('img')) {
+                    $this->session->set_flashdata('failed',$this->upload->display_errors());
+                } else {
+                    $imgdata = $this->upload->data();
+                    $imagename = $imgdata['file_name'];
+                } 
 
+                $data=$this->input->post();
+                $data['img']=$imagename;
+                $data['url_slug']=$this->generate_url_slug($this->input->post('heading'),'blogs');
+                $status= $this->save->saveInfo('blogs',$data);
 
-            $feat='0';
-            if($this->input->post('featured')!=null){
-                $feat='1';
-            }
-            $data=array('heading'=>$this->input->post('heading'),
-                        'content'=>$this->input->post('content'),
-                        'date'=>date('Y-m-d'),
-                        'img'=>$imagename,
-                        'featured'=>$feat
-                        );
-            $status= $this->save->saveBlog($data);
-
-            if($status){
-                $this->session->set_flashdata('success','New Blog posted !' );
-                redirect('Admin/Blog');
+                if($status){
+                    $this->session->set_flashdata('success','New Blog posted !' );
+                    redirect('Admin/Blog');
+                }
+                else{
+                    $this->session->set_flashdata('failed','Error !');
+                    redirect('Admin/Blog');
+                }  
             }
             else{
-                $this->session->set_flashdata('failed','Error !');
-                redirect('Admin/Blog');
+                $this->session->set_flashdata('failed',strip_tags(validation_errors()));
+                redirect('Admin/events');
             }
         }
+
+
 
         public function event()
         {
@@ -85,6 +98,8 @@ class Add extends MY_Controller {
                 redirect('Admin/events');
             }
         }
+
+
         
         public function feedback()
         {
@@ -120,6 +135,8 @@ class Add extends MY_Controller {
                 redirect('Admin/feedbacks');
             }
         }
+
+
         
         public function image()
         {
@@ -168,6 +185,8 @@ class Add extends MY_Controller {
                 redirect('Admin/gallery');
             }
         }
+
+
 
         public function Announcement()
         {
@@ -239,6 +258,27 @@ class Add extends MY_Controller {
                 $this->session->set_flashdata('failed',strip_tags(validation_errors()));
                 redirect('Admin/Announcement');
             }
+        }
+
+        function generate_url_slug($string,$table,$field='url_slug',$key=NULL,$value=NULL){
+            $t =& get_instance();
+            $slug = url_title($string);
+            $slug = strtolower($slug);
+            $i = 0;
+            $params = array ();
+            $params[$field] = $slug;
+            if($key)$params["$key !="] = $value; 
+            while ($t->db->where($params)->get($table)->num_rows())
+            {
+                if (!preg_match ('/-{1}[0-9]+$/', $slug )){
+                    $slug .= '-' . ++$i;
+                }
+                else{
+                    $slug = preg_replace ('/[0-9]+$/', ++$i, $slug );
+                }
+                $params [$field] = $slug;
+            }
+                return $slug;
         }
         
         public function Mail()

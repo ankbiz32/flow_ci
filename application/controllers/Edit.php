@@ -26,47 +26,61 @@ class Edit extends MY_Controller {
             }
         }
 
-        public function Blog($id)
+        public function blog($id)
         {
-            $data['featured']='0';
-            $data=$this->input->post();
-            if($this->input->post('featured')==null){
-                $data['featured']='0';
-            }
-            unset($data['author']);
-            unset($data['category']);
+                $blog=$this->fetch->getInfoById('blogs','id',$id);
+                $this->load->view('admin/adminheader', ['blog' => $blog]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/blogForm'); 
+                $this->load->view('admin/adminfooter');  
+        }
 
-            if($_FILES['img']['name']!=null){
-                $path ='assets/images';
-                $initialize = array(
-                    "upload_path" => $path,
-                    "allowed_types" => "jpg|jpeg|png|bmp|webp|gif",
-                    "remove_spaces" => TRUE
-                );
-                $this->load->library('upload', $initialize);
-                if (!$this->upload->do_upload('img')) {
-                    $this->session->set_flashdata('failed',$this->upload->display_errors());
-                } 
-                else {
-                    $blg= $this->fetch->getBlogById($id);
-                    $path= 'assets/images/'.$blg->img;
-                    unlink("$path");
+        public function updateBlog($id)
+        {
+            $this->form_validation->set_rules('heading', 'Heading', 'required');
+            $this->form_validation->set_rules('date', 'Date', 'required');
+            $this->form_validation->set_rules('content', 'Content', 'required');
+            
+            if($this->form_validation->run() == true){
+                $data=$this->input->post();
 
-                    $imgdata = $this->upload->data();
-                    $imagename = $imgdata['file_name'];
+                if($_FILES['img']['name']!=null){
+                    $path ='assets/images';
+                    $initialize = array(
+                        "upload_path" => $path,
+                        "allowed_types" => "jpg|jpeg|png|bmp|webp|gif",
+                        "remove_spaces" => TRUE
+                    );
+                    $this->load->library('upload', $initialize);
+                    if (!$this->upload->do_upload('img')) {
+                        $this->session->set_flashdata('failed',$this->upload->display_errors());
+                    } 
+                    else {
+                        $blg= $this->fetch->getInfoById('blogs','id',$id);
+                        $unlink= 'assets/images/'.$blg->img;
+
+                        $imgdata = $this->upload->data();
+                        $imagename = $imgdata['file_name'];
+                    }
+                    $data['img'] = $imagename;
                 }
-                $data['img'] = $imagename;
-            }
 
-            $status= $this->edit->updateBlog($data, $id);
-            if($status){
-                $this->session->set_flashdata('success','Blog Updated !');
-                redirect('Admin/Blog');
+                $status= $this->edit->updateInfo($data, 'blogs', 'id', $id);
+                if($status){
+                    
+                    unlink($unlink);
+                    $this->session->set_flashdata('success','Blog Updated !');
+                    redirect('Admin/Blog');
+                }
+                else{
+                    $this->session->set_flashdata('failed','Error !');
+                    redirect('Admin/Blog');
+                }
             }
             else{
-                $this->session->set_flashdata('failed','Error !');
-                redirect('Admin/Blog');
+                $this->session->set_flashdata('failed',strip_tags(validation_errors()));
             }
+                    
         }
 
         public function Announcement($id)

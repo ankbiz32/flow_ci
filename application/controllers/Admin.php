@@ -20,27 +20,10 @@ class Admin extends MY_Controller {
 
         public function Blog()
         {
-                $blogs=$this->fetch->getBlogsByOrder();
+                $blogs=$this->fetch->getInfo('blogs');
                 $this->load->view('admin/adminheader', ['blogs' => $blogs]); 
                 $this->load->view('admin/adminaside'); 
                 $this->load->view('admin/adminBlog'); 
-                $this->load->view('admin/adminfooter');  
-        }
-
-        public function editBlogForm($id)
-        {
-                $blog=$this->fetch->getBlogByIdEdit($id);
-                $this->load->view('admin/adminheader', ['blog' => $blog]); 
-                $this->load->view('admin/adminaside'); 
-                $this->load->view('admin/blogForm'); 
-                $this->load->view('admin/adminfooter');  
-        }
-
-        public function addBlogForm()        
-        {
-                $this->load->view('admin/adminheader'); 
-                $this->load->view('admin/adminaside'); 
-                $this->load->view('admin/blogForm'); 
                 $this->load->view('admin/adminfooter');  
         }
 

@@ -55,12 +55,12 @@
             </a>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="<?=base_url('Admin/Announcement')?>" class="nav-link <?php if($this->uri->segment(2)=="Announcement"){echo ' CustomActive';}?>">
               <i class="fas fa-bullhorn nav-icon"></i>
               <p>Notice</p>
             </a>
-          </li>
+          </li> -->
 
           <li class="nav-item">
             <a href="<?=base_url('Admin/webProfile')?>" class="nav-link <?php if($this->uri->segment(2)=="webProfile"){echo ' CustomActive';}?>">
