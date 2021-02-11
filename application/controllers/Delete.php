@@ -11,7 +11,54 @@ class Delete extends MY_Controller {
         }
 
 
-        // Delete Blog
+        public function event($id)
+        {
+            $status= $this->delete->deleteInfo('events', 'id', $id);
+
+            if($status){
+                $this->session->set_flashdata('success','Event deleted!');
+                redirect('Admin/events');
+            }
+            else{
+                $this->session->set_flashdata('failed','Error!');
+                redirect('Admin/events');
+            }
+        }
+
+
+        public function image($id)
+        {
+            $old_img= $this->fetch->getInfoById('gallery','id',$id);
+            $unlink= 'assets/images/'.$old_img->img_src;
+            $status= $this->delete->deleteInfo('gallery', 'id', $id);
+
+            if($status){
+                unlink($unlink);
+                $this->session->set_flashdata('success','Image deleted!');
+                redirect('Admin/gallery');
+            }
+            else{
+                $this->session->set_flashdata('failed','Error!');
+                redirect('Admin/gallery');
+            }
+        }
+
+
+        public function feedback($id)
+        {
+            $status= $this->delete->deleteInfo('feedbacks', 'id', $id);
+
+            if($status){
+                $this->session->set_flashdata('success','Feedback deleted!');
+                redirect('Admin/feedbacks');
+            }
+            else{
+                $this->session->set_flashdata('failed','Error!');
+                redirect('Admin/feedbacks');
+            }
+        }
+
+
         public function Blog($id)
         {
             $blogimg= $this->fetch->getBlogById($id);
@@ -29,7 +76,7 @@ class Delete extends MY_Controller {
             }
         }
 
-         // Delete Notice
+
          public function Announcement($id)
          {
              $notice= $this->fetch->getNoticeById($id);

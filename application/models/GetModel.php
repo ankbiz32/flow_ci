@@ -18,7 +18,7 @@ class GetModel extends CI_Model{
     {
         $this->db->select('*');
         $this->db->from('blogs b');
-        $this->db->order_by('bid','desc');
+        $this->db->order_by('id','desc');
         return $blogs_arr= $this->db->get()->result();
     }
 
@@ -28,7 +28,7 @@ class GetModel extends CI_Model{
         $this->db->select('*');
         $this->db->from('blogs b');
         $this->db->where('featured','1');
-        $this->db->order_by('bid','desc');
+        $this->db->order_by('id','desc');
         return $this->db->get()->result();
     }
 
@@ -53,7 +53,7 @@ class GetModel extends CI_Model{
     {
         $this->db->select('*');
         $this->db->from('blogs b');
-        $this->db->order_by('bid','desc');
+        $this->db->order_by('id','desc');
         $this->db->limit($limit, $start);
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
@@ -68,7 +68,7 @@ class GetModel extends CI_Model{
     // Fetch blog by id
     public function getBlogById($id)
     {
-        $this->db->where('bid', $id);
+        $this->db->where('id', $id);
         return $this->db->get('blogs')->row();
     }
 
@@ -77,9 +77,7 @@ class GetModel extends CI_Model{
     {
         $this->db->select('*');
         $this->db->from('blogs b');
-        $this->db->join('blog_categories bc', 'b.categories_id = bc.id','left');
-        $this->db->join('blog_authors ba', 'b.authors_id = ba.id','left');
-        $this->db->where('bid', $id);
+        $this->db->where('id', $id);
         return $this->db->get()->row();
     }
 
@@ -112,6 +110,22 @@ class GetModel extends CI_Model{
     public function getAdminProfile()
     {
         return $this->db->get('users')->row();
+    }
+
+
+    public function getInfo($tbl)
+    {
+        return $this->db->order_by('id', 'DESC')->get($tbl)->result();
+    }
+
+    public function getAllInfoById($tbl, $col, $id)
+    {
+        return $this->db->order_by('id', 'DESC')->where($col, $id)->get($tbl)->result();
+    }
+    
+    public function getInfoById($tbl, $col, $id)
+    {
+        return $this->db->where($col, $id)->get($tbl)->row();
     }
 
     

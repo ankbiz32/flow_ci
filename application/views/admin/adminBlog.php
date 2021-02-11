@@ -6,13 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="ml-2 text-dark"><i class="fas fa-blog"></i>&nbsp;&nbsp;Blogs</h1>
-            </div><!-- /.col -->
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="<?=base_url('Admin')?>">Dashboard</a></li>
-                <li class="breadcrumb-item active">Blog</li>
-                </ol>
+                <h4 class="ml-2 text-dark"><i class="fas fa-blog"></i>&nbsp;&nbsp;Blogs</h4>
             </div><!-- /.col -->
             </div><!-- /.row -->
         </div>
@@ -26,14 +20,14 @@
             <div class="card">
               <div class="card-header row">
                 <h2 class="card-title">Your blogs:</h2> <br>
-                <a href="<?=base_url('Admin/addBlogForm')?>" class="btn btn-primary ml-auto">+Add new Blog</a>
+                <a href="<?=base_url('Admin/addBlogForm')?>" class="btn btn-primary btn-sm ml-auto">+Add new Blog</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="bookdt" class="table table-bordered table-hover" style="width:100%;">
                   <thead>
                     <tr>
-                      <th>Post id</th>
+                      <th>Blog no.</th>
                       <th>Image</th>
                       <th>Heading</th>
                       <th>Action</th>
@@ -42,12 +36,12 @@
                   <tbody>
                     <?php foreach ($blogs as $blog){?>
                       <tr>
-                        <td class="text-center"><?=$blog->bid?> </td>
+                        <td class="text-center"><?=$blog->id?> </td>
                         <td><img src="<?=base_url()?>assets/images/<?=$blog->img?>" alt="img" height="80"></td>
                         <td><?=$blog->heading?></td>
                         <td>
-                          <a href="<?=base_url('Delete/Blog/'.$blog->bid)?>" onclick="confirmation(event)" class="btn del-btn btn-danger mb-1" title="Delete Blog"><i class="fa fa-trash-alt"></i></a>
-                          <a href="<?=base_url('Admin/editBlogForm/'.$blog->bid)?>" class="btn btn-primary mb-1" title="Edit Blog"><i class="fa fa-edit"></i></a>
+                          <a href="<?=base_url('Delete/Blog/'.$blog->id)?>" onclick="confirmation(event)" class="btn btn-sm del-btn btn-danger mb-1" title="Delete Blog"><i class="fa fa-trash-alt"></i></a>
+                          <a href="<?=base_url('Admin/editBlogForm/'.$blog->id)?>" class="btn btn-sm btn-primary mb-1" title="Edit Blog"><i class="fa fa-edit"></i></a>
                         </td>
                       </tr>
                     <?php }?>
@@ -82,6 +76,7 @@
 <script>
   $(function () {
     $('#bookdt').DataTable({
+      "aaSorting": [],
       "paging": true,
       "lengthChange": true,
       "searching": true,

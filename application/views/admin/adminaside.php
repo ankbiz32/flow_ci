@@ -3,7 +3,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?=base_url('Admin')?>" class="brand-link ml-1">
-      <span class="brand-text text-lg"><img src="<?=base_url('assets/images/logo-image.png')?>" alt="" height="70px" class=""> <strong class="ml-2">Admin </strong>Panel</span>
+      <span class="brand-text text-lg"><img src="<?=base_url('assets/images/logo-image.png')?>" alt="" height="50" class=""> <strong class="ml-2">Admin </strong>Panel</span>
     </a>
     <!-- Sidebar -->
     <div class="sidebar">

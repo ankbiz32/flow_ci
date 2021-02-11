@@ -7,11 +7,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="ml-2 text-dark"><?= isset($blog) ? '<i class="fas fa-edit"></i>&nbsp;&nbsp;Edit blog' : '+&nbsp;&nbsp;Add blog' ?></h1>
+                <h4 class="ml-2 text-dark"><?= isset($blog) ? '<i class="fas fa-edit"></i>&nbsp;&nbsp;Edit blog' : '+&nbsp;&nbsp;Add blog' ?></h4>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="<?=base_url('Admin')?>">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="<?=base_url('Admin/Blog')?>">Blogs</a></li>
                 <li class="breadcrumb-item active"><?= isset($blog) ? 'Edit' : 'Add new' ?> Blog</li>
                 </ol>
@@ -27,7 +26,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card">
                 <div class="card-body">
-                    <form role="form" method="post" action="<?= isset($blog) ? base_url('Edit/Blog/'.$blog->bid) : base_url('Add/Blog') ?>" enctype="multipart/form-data">
+                    <form role="form" method="post" action="<?= isset($blog) ? base_url('Edit/Blog/'.$blog->id) : base_url('Add/Blog') ?>" enctype="multipart/form-data">
                         <div class="row mb-4">
                             <div class="input-group col-md-6 mr-sm-5">
                                 <label for="img" class="text-sm mr-2 pt-2">Choose:</label>

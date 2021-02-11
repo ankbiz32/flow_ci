@@ -6,9 +6,9 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark"><i class="fas fa-columns nav-icon"></i> &nbsp;&nbsp;Enquiries</h1>
+                <h4 class="ml-2 text-dark"><i class="fas fa-calendar-alt"></i>&nbsp;&nbsp;Events</h4>
             </div><!-- /.col -->
-         </div><!-- /.row -->
+            </div><!-- /.row -->
         </div>
     </div> <!-- /.Content header -->
     
@@ -18,38 +18,46 @@
         <div class="row mt-3">
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card">
-              <div class="card-header">
-                <h2 class="card-title">Your enquiries:</h2> <br>
+              <div class="card-header row">
+                <h2 class="card-title">Your events:</h2> <br>
+                <a href="<?=base_url('Add/event')?>" class="btn btn-primary btn-sm ml-auto">+Add new event</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="bookdt" class="table table-bordered table-hover" style="width:100%;">
                   <thead>
                     <tr>
-                      <th>Enq. No</th>
-                      <th>Date</th>
-                      <th>Name</th>
-                      <th>Organisation name</th>
-                      <th>E-mail</th>
-                      <th>Phone</th>
-                      <th>Message</th>
+                      <th>S. No</th>
+                      <th>Heading</th>
+                      <th>Details</th>
+                      <th>Short descr.</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <!-- display Enquiries-->
-                    <?php foreach($enq as $enqui){?>
+                    <?php $z=1; foreach ($data as $d){?>
                       <tr>
-                        <td><?=$enqui->id?></td>
-                        <td><?=date("d-m-Y",strtotime("$enqui->date"))?></td>
-                        <td><?=$enqui->name?></td>
-                        <td><?=$enqui->org_name?></td>
-                        <td><?=$enqui->email?></td>
-                        <td><?=$enqui->phone?></td>
-                        <td><?=$enqui->message?></td>
+                        <td class="text-center"><?=$z?> .</td>
+                        <td><?=$d->heading?></td>
+                        <td>
+                            <span class="text-muted">Date &emsp;:</span> <?=$d->date?>
+                            <br>
+                            <span class="text-muted">Venue &nbsp;:</span> <?=$d->venue?>
+                        </td>
+                        <td><?=$d->short_descr?></td>
+                        <td>
+                          <a href="<?=base_url('Delete/event/'.$d->id)?>" onclick="confirmation(event)" class="btn del-btn btn-sm btn-danger mb-1" title="Delete event"><i class="fa fa-trash-alt"></i></a>
+                          <a href="<?=base_url('Edit/event/'.$d->id)?>" class="btn btn-primary btn-sm mb-1" title="Edit event"><i class="fa fa-edit"></i></a>
+                        </td>
                       </tr>
-                    <?php }?>
+                    <?php $z++; }?>
+
+                    <!-- display data-->
+                    
+                  
                   </tbody>
                 </table>
+
               </div>
               <!-- /.card-body -->
             </div>
@@ -64,9 +72,6 @@
 <!-- DataTable assets -->
 <script src="<?php echo base_url(); ?>assets/plugins/datatables/jquery.dataTables.js"></script>
 <script src="<?php echo base_url(); ?>assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/jszip/jszip.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/pdfmake/vfs_fonts.js"></script>
 <script src="<?php echo base_url(); ?>assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
@@ -77,14 +82,15 @@
 <script>
   $(function () {
     $('#bookdt').DataTable({
+      
+      "aaSorting": [],
       "paging": true,
       "lengthChange": true,
       "searching": true,
       "ordering": true,
       "info": true,
       "autoWidth": true,
-      "scrollX": true,
-      "order": [[ 5, "asc" ]]
+      "scrollX": true
     });
   });
 </script>

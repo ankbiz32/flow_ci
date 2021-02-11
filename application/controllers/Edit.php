@@ -81,48 +81,6 @@ class Edit extends MY_Controller {
                 $this->load->view('admin/adminfooter');  
         }
 
-        // public function updateNotice($id)
-        // {  
-        //     $data=array('content'=>$this->input->post('content'),
-        //                 'date'=>date('Y-m-d')
-        //                 );
-                        
-        //     if( $_FILES['notice_file']['name']!=null ){
-        //         $path ='assets/notice';
-        //         $initialize = array(
-        //             "upload_path" => $path,
-        //             "allowed_types" => "jpg|jpeg|png|bmp|webp|doc|docx|pdf|xls|xlsx|txt",
-        //             "remove_spaces" => TRUE
-        //         );
-        //         $this->load->library('upload', $initialize);
-        //         if (!$this->upload->do_upload('notice_file')) {
-        //             $this->session->set_flashdata('failed',$this->upload->display_errors());
-        //             redirect('Admin/Announcement');
-        //         }
-        //         else {
-        //             $filedata = $this->upload->data();
-        //             $filename = $filedata['file_name'];
-        //             $data['file_src']=$filename;
-        //             $notice= $this->fetch->getNoticeById($id);
-        //             if($notice->file_src!='_blank_'){
-        //                 $path= 'assets/notice/'.$notice->file_src;
-        //                 unlink("$path");
-        //             }
-        //         }
-        //     } 
-
-        //     $status= $this->edit->updateNotice($data, $id);
-
-        //     if($status){
-        //         $this->session->set_flashdata('success','Announcement Updated !' );
-        //         redirect('Admin/Announcement');
-        //     }
-        //     else{
-        //         $this->session->set_flashdata('failed','Error !');
-        //         redirect('Admin/Announcement');
-        //     }
-        // }
-
         public function updateNotice($id)
         {  
                         
@@ -193,6 +151,139 @@ class Edit extends MY_Controller {
                 redirect('Admin/Announcement');
             }
         }
+
+
+        public function image($id)
+        {
+            $this->load->view('admin/adminheader',['adminTitle'=>'Edit image',
+                                                    'submissonPath'=>base_url().'Edit/updateImage/'.$id,
+                                                    'data'=>$id
+                                                ]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/gallery-form'); 
+                $this->load->view('admin/adminfooter');   
+        }
+
+        public function updateImage($id)
+        {
+            if( $_FILES['img']['name']!=null ){
+                $old_img= $this->fetch->getInfoById('gallery','id',$id);
+                $unlink= 'assets/images/'.$old_img->img_src;
+                $path ='assets/images';
+                $initialize = array(
+                    "upload_path" => $path,
+                    "allowed_types" => "jpg|jpeg|png|bmp|webp|doc|docx|pdf|xls|xlsx|txt",
+                    "remove_spaces" => TRUE
+                );
+                $this->load->library('upload', $initialize);
+                if (!$this->upload->do_upload('img')) {
+                    $this->session->set_flashdata('failed',$this->upload->display_errors());
+                    redirect('Admin/gallery');
+                }
+                else {
+                    $filedata = $this->upload->data();
+                    $fileName = $filedata['file_name'];
+                    
+                    $data['img_src']=$fileName;
+                    $status= $this->edit->updateInfo($data, 'gallery', 'id' , $id);
+
+                    if($status){
+                        unlink($unlink);
+                        $this->session->set_flashdata('success','Image updated !' );
+                        redirect('Admin/gallery');
+                    }
+                    else{
+                        $this->session->set_flashdata('failed','Error !');
+                        redirect('Admin/gallery');
+                    }
+                } 
+            }
+            else{
+                $this->session->set_flashdata('failed','Please upload an image');
+                redirect('Admin/gallery');
+            }
+        }
+
+
+        
+        public function event($id)
+        {
+                $data= $this->fetch->getInfoById('events', 'id', $id);
+                $this->load->view('admin/adminheader',['adminTitle'=>'Edit Announcement',
+                                                        'submissonPath'=>base_url().'Edit/updateEvent/'.$id,
+                                                        'data'=>$data
+                                                    ]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/events-form'); 
+                $this->load->view('admin/adminfooter');  
+        }
+
+        public function updateEvent($id)
+        {  
+            $this->form_validation->set_rules('heading', 'Heading', 'required');
+            $this->form_validation->set_rules('date', 'Date', 'required');
+            $this->form_validation->set_rules('venue', 'Venue', 'required');
+            $this->form_validation->set_rules('full_descr', 'Full descr', 'required');
+            
+            if($this->form_validation->run() == true){
+                $data=$this->input->post();
+                $status= $this->edit->updateInfo($data, 'events', 'id' , $id);
+
+                if($status){
+                    $this->session->set_flashdata('success','Event updated !' );
+                    redirect('Admin/events');
+                }
+                else{
+                    $this->session->set_flashdata('failed','Error !');
+                    redirect('Admin/events');
+                }
+            }
+            else{
+                $this->session->set_flashdata('failed',strip_tags(validation_errors()));
+                redirect('Admin/events');
+            }
+        }
+
+           
+
+        public function feedback($id)
+        {
+            $data= $this->fetch->getInfoById('feedbacks', 'id', $id);
+            $this->load->view('admin/adminheader',['adminTitle'=>'Edit Feedback',
+                                                    'submissonPath'=>base_url().'Edit/updateFeedback/'.$id,
+                                                    'data'=>$data
+                                                ]); 
+            $this->load->view('admin/adminaside'); 
+            $this->load->view('admin/feedbacks-form'); 
+            $this->load->view('admin/adminfooter');  
+        }
+
+        public function updateFeedback($id)
+        {  
+            $this->form_validation->set_rules('name', 'Name', 'required');
+            $this->form_validation->set_rules('help_text', 'Designation/Exp.', 'required');
+            $this->form_validation->set_rules('message', 'Message', 'required');
+            
+            if($this->form_validation->run() == true){
+                $data=$this->input->post();
+                $status= $this->edit->updateInfo($data, 'feedbacks', 'id' , $id);
+
+                if($status){
+                    $this->session->set_flashdata('success','Feedback updated !' );
+                    redirect('Admin/feedbacks');
+                }
+                else{
+                    $this->session->set_flashdata('failed','Error !');
+                    redirect('Admin/feedbacks');
+                }
+            }
+            else{
+                $this->session->set_flashdata('failed',strip_tags(validation_errors()));
+                redirect('Admin/feedbacks');
+            }
+        }
+
+
 
         public function enqStatus($id)
         {

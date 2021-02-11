@@ -44,8 +44,20 @@ class EditModel extends CI_Model{
     // Update Blog
     public function updateBlog($data,$id)
     {
-        $this->db->where('bid',$id);
+        $this->db->where('id',$id);
         $flag = $this->db->update('blogs',$data);
+        if($flag){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function updateInfo( $data, $tbl, $col, $id)
+    {
+        $this->db->where($col,$id);
+        $flag = $this->db->update($tbl,$data);
         if($flag){
             return true;
         }

@@ -27,17 +27,6 @@ class Admin extends MY_Controller {
                 $this->load->view('admin/adminfooter');  
         }
 
-        public function Announcement()
-        {
-                $notices=$this->fetch->getNotices();
-                $this->load->view('admin/adminheader',['notices' => $notices,
-                                                        'adminTitle'=>'Announcement'
-                                                        ]); 
-                $this->load->view('admin/adminaside'); 
-                $this->load->view('admin/adminNotice'); 
-                $this->load->view('admin/adminfooter');  
-        }
-
         public function editBlogForm($id)
         {
                 $blog=$this->fetch->getBlogByIdEdit($id);
@@ -52,6 +41,52 @@ class Admin extends MY_Controller {
                 $this->load->view('admin/adminheader'); 
                 $this->load->view('admin/adminaside'); 
                 $this->load->view('admin/blogForm'); 
+                $this->load->view('admin/adminfooter');  
+        }
+
+
+        public function Announcement()
+        {
+                $notices=$this->fetch->getNotices();
+                $this->load->view('admin/adminheader',['notices' => $notices,
+                                                        'adminTitle'=>'Announcement'
+                                                        ]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/adminNotice'); 
+                $this->load->view('admin/adminfooter');  
+        }
+
+        public function events()
+        {
+                $data=$this->fetch->getInfo('events');
+                $this->load->view('admin/adminheader',['data' => $data,
+                                                        'adminTitle'=>'Events'
+                                                        ]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/events'); 
+                $this->load->view('admin/adminfooter');  
+        }
+
+
+        public function feedbacks()
+        {
+                $data=$this->fetch->getInfo('feedbacks');
+                $this->load->view('admin/adminheader',['data' => $data,
+                                                        'adminTitle'=>'Feedbacks'
+                                                        ]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/feedbacks'); 
+                $this->load->view('admin/adminfooter');  
+        }
+
+        public function gallery()
+        {
+                $data=$this->fetch->getInfo('gallery');
+                $this->load->view('admin/adminheader',['data' => $data,
+                                                        'adminTitle'=>'Gallery'
+                                                        ]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/gallery'); 
                 $this->load->view('admin/adminfooter');  
         }
 

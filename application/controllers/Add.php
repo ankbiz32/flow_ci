@@ -50,6 +50,125 @@ class Add extends MY_Controller {
             }
         }
 
+        public function event()
+        {
+            $this->load->view('admin/adminheader',['adminTitle'=>'Add event',
+                                                'submissonPath'=>'saveEvent'
+                                                ]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/events-form'); 
+                $this->load->view('admin/adminfooter');   
+        }
+
+        public function saveEvent()
+        {
+            $this->form_validation->set_rules('heading', 'Heading', 'required');
+            $this->form_validation->set_rules('date', 'Date', 'required');
+            $this->form_validation->set_rules('venue', 'Venue', 'required');
+            $this->form_validation->set_rules('full_descr', 'Full descr', 'required');
+            
+            if($this->form_validation->run() == true){
+                $data=$this->input->post();
+                $status= $this->save->saveInfo('events',$data);
+
+                if($status){
+                    $this->session->set_flashdata('success','Event added !' );
+                    redirect('Admin/events');
+                }
+                else{
+                    $this->session->set_flashdata('failed','Error !');
+                    redirect('Admin/events');
+                }
+            }
+            else{
+                $this->session->set_flashdata('failed',strip_tags(validation_errors()));
+                redirect('Admin/events');
+            }
+        }
+        
+        public function feedback()
+        {
+            $this->load->view('admin/adminheader',['adminTitle'=>'Add Feedback',
+                                                'submissonPath'=>'saveFeedback'
+                                                ]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/feedbacks-form'); 
+                $this->load->view('admin/adminfooter');   
+        }
+
+        public function saveFeedback()
+        {
+            $this->form_validation->set_rules('name', 'Name', 'required');
+            $this->form_validation->set_rules('help_text', 'Designation/Exp.', 'required');
+            $this->form_validation->set_rules('message', 'Message', 'required');
+            
+            if($this->form_validation->run() == true){
+                $data=$this->input->post();
+                $status= $this->save->saveInfo('feedbacks',$data);
+
+                if($status){
+                    $this->session->set_flashdata('success','Feedback added !' );
+                    redirect('Admin/feedbacks');
+                }
+                else{
+                    $this->session->set_flashdata('failed','Error !');
+                    redirect('Admin/feedbacks');
+                }
+            }
+            else{
+                $this->session->set_flashdata('failed',strip_tags(validation_errors()));
+                redirect('Admin/feedbacks');
+            }
+        }
+        
+        public function image()
+        {
+            $this->load->view('admin/adminheader',['adminTitle'=>'Add image',
+                                                'submissonPath'=>'saveImage'
+                                                ]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/gallery-form'); 
+                $this->load->view('admin/adminfooter');   
+        }
+
+        public function saveImage()
+        {
+            if( $_FILES['img']['name']!=null ){
+                $path ='assets/images';
+                $initialize = array(
+                    "upload_path" => $path,
+                    "allowed_types" => "jpg|jpeg|png|bmp|webp",
+                    "remove_spaces" => TRUE
+                );
+                $this->load->library('upload', $initialize);
+                if (!$this->upload->do_upload('img')) {
+                    $this->session->set_flashdata('failed',$this->upload->display_errors());
+                    redirect('Admin/gallery');
+                }
+                else {
+                    $filedata = $this->upload->data();
+                    // var_dump($filedata);exit;
+                    $fileName = $filedata['file_name'];
+                    
+                    $data['img_src']=$fileName;
+                    $status= $this->save->saveInfo('gallery',$data);
+
+                    if($status){
+                        $this->session->set_flashdata('success','Image added !' );
+                        redirect('Admin/gallery');
+                    }
+                    else{
+                        $this->session->set_flashdata('failed','Error !');
+                        redirect('Admin/gallery');
+                    }
+                } 
+            }
+            else{
+                $this->session->set_flashdata('failed','Please upload an image');
+                redirect('Admin/gallery');
+            }
+        }
+
         public function Announcement()
         {
                 $this->load->view('admin/adminheader',['adminTitle'=>'Add Announcement',

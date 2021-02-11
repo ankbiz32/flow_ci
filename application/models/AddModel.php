@@ -34,4 +34,19 @@ class AddModel extends CI_Model{
             return false;
         }
     }
+
+     
+    public function saveInfo($table,$d)
+    {
+        if(!empty($d)){
+            $this->db->insert($table,$d);
+            return $this->db->insert_id();
+        }
+		return false;
+    }
+
+
+
+
+
 }
