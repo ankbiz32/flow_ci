@@ -13,7 +13,8 @@ class Add extends MY_Controller {
         
         public function blog()        
         {
-                $this->load->view('admin/adminheader'); 
+                $categories= $this->fetch->getInfo('blog_categories');
+                $this->load->view('admin/adminheader',['adminTitle'=>'Add blog','categories'=>$categories]); 
                 $this->load->view('admin/adminaside'); 
                 $this->load->view('admin/blogForm'); 
                 $this->load->view('admin/adminfooter');  
@@ -44,6 +45,7 @@ class Add extends MY_Controller {
                 $data=$this->input->post();
                 $data['img']=$imagename;
                 $data['url_slug']=$this->generate_url_slug($this->input->post('heading'),'blogs');
+                $data['tags']=implode("|",$data['tags']);
                 $status= $this->save->saveInfo('blogs',$data);
 
                 if($status){
@@ -82,6 +84,25 @@ class Add extends MY_Controller {
             
             if($this->form_validation->run() == true){
                 $data=$this->input->post();
+
+                if( $_FILES['img']['name']!=null ){
+                    $path ='assets/images';
+                    $initialize = array(
+                        "upload_path" => $path,
+                        "allowed_types" => "jpg|jpeg|png|bmp|webp|doc|docx|pdf|xls|xlsx|txt",
+                        "remove_spaces" => TRUE
+                    );
+                    $this->load->library('upload', $initialize);
+                    if (!$this->upload->do_upload('img')) {
+                        $this->session->set_flashdata('failed',$this->upload->display_errors());
+                        redirect('Admin/events');
+                    }
+                    else {
+                        $filedata = $this->upload->data();
+                        $data['img_src']=$filedata['file_name'];
+                    } 
+                }
+
                 $status= $this->save->saveInfo('events',$data);
 
                 if($status){

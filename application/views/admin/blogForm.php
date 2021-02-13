@@ -1,4 +1,10 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<style>
+    .select2-selection__choice__display{
+    color:black !important;      
+    }
+</style>
 
 <div class="content-wrapper">
     
@@ -32,16 +38,36 @@
                         <p><strong>Current image :</strong> <img src="<?=base_url('assets/images/').$blog->img?>" alt="" width="90"></p>   
                      <?php }?>   
                         <div class="row mb-4">
-                            <div class="input-group col-md-6 mr-sm-5">
+                            <div class="form-group col-md-6">
                                 <label for="img" class="text-sm mr-2 pt-2">Image <?= isset($blog) ? '' : '<span class="text-danger">*</span>' ?> :</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="img" name="img" <?= isset($blog) ? '' : 'required' ?>>
                                     <label class="custom-file-label" for="customFile">Choose image</label>
                                 </div>
                             </div>
-                            <div class="input-group col-md-4 pl-sm-5">
+                            <div class="form-group col-md-6">
                                 <label for="date" class="text-sm mr-2 pt-2">Date <span class="text-danger">*</span> :</label>
                                 <input type="date" value="<?= isset($blog) ? date('Y-m-d',strtotime($blog->date)) : '' ?>" class="form-control" name="date" id="date" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="category_id" class="text-sm mr-2 pt-2">Category <span class="text-danger">*</span> :</label>
+                                <select name="category_id" class="form-control" id="category_id" required>
+                                    <option value="">-- Select any category --</option>
+                                    <?php foreach($categories as $cat){?>
+                                        <option value="<?=$cat->id?>" <?=isset($blog)?( $blog->category_id==$cat->id?' selected':'' ):''?>><?=$cat->category?></option>
+                                    <?php }?>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="date" class="text-sm mr-2 pt-2">Tags (optional) :</label>
+                                <select name="tags[]" id="tags" class="form-control" multiple>
+                                    <?php if(isset($blog) && $blog->tags){
+                                        $tags=explode('|',$blog->tags);
+                                        foreach($tags as $t){?>
+                                        <option value="<?=$t?>" selected><?=$t?></option>
+                                    <?php } }?>
+                                
+                                </select>
                             </div>
                         </div>
                         <div class="row">
@@ -82,12 +108,17 @@
 
 <!-- Summernote Rich text editor -->
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script>
     // Name of the file appearing on selecting image
     $(".custom-file-input").on("change", function() {
         var fileName = $(this).val().split("\\").pop();
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+
+    $('#tags').select2({
+        tags:true
     });
 
     $(document).ready(function() {

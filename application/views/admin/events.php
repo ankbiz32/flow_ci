@@ -28,6 +28,7 @@
                   <thead>
                     <tr>
                       <th>S. No</th>
+                      <th>Image</th>
                       <th>Heading</th>
                       <th>Details</th>
                       <th>Short descr.</th>
@@ -38,6 +39,13 @@
                     <?php $z=1; foreach ($data as $d){?>
                       <tr>
                         <td class="text-center"><?=$z?> .</td>
+                        <td>
+                        <?php if($d->img_src){?>
+                          <img src="<?=base_url()?>assets/images/<?=$d->img_src?>" alt="img" height="80">
+                        <?php } else{?>
+                          <em class="text-muted">No image</em>
+                        <?php }?>
+                        </td>
                         <td><?=$d->heading?></td>
                         <td>
                             <span class="text-muted">Date &emsp;:</span> <?=$d->date?>

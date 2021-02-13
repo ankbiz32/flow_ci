@@ -28,8 +28,9 @@ class Edit extends MY_Controller {
 
         public function blog($id)
         {
+                $categories= $this->fetch->getInfo('blog_categories');
                 $blog=$this->fetch->getInfoById('blogs','id',$id);
-                $this->load->view('admin/adminheader', ['blog' => $blog]); 
+                $this->load->view('admin/adminheader', ['blog' => $blog,'categories'=>$categories]); 
                 $this->load->view('admin/adminaside'); 
                 $this->load->view('admin/blogForm'); 
                 $this->load->view('admin/adminfooter');  
@@ -43,6 +44,7 @@ class Edit extends MY_Controller {
             
             if($this->form_validation->run() == true){
                 $data=$this->input->post();
+                $data['tags']=implode("|",$data['tags']);
 
                 if($_FILES['img']['name']!=null){
                     $path ='assets/images';
@@ -241,9 +243,33 @@ class Edit extends MY_Controller {
             
             if($this->form_validation->run() == true){
                 $data=$this->input->post();
+
+                if( $_FILES['img']['name']!=null ){
+                    $old_img= $this->fetch->getInfoById('events','id',$id);
+                    $unlink= 'assets/images/'.$old_img->img_src;
+                    $path ='assets/images';
+                    $initialize = array(
+                        "upload_path" => $path,
+                        "allowed_types" => "jpg|jpeg|png|bmp|webp|doc|docx|pdf|xls|xlsx|txt",
+                        "remove_spaces" => TRUE
+                    );
+                    $this->load->library('upload', $initialize);
+                    if (!$this->upload->do_upload('img')) {
+                        $this->session->set_flashdata('failed',$this->upload->display_errors());
+                        redirect('Admin/events');
+                    }
+                    else {
+                        $filedata = $this->upload->data();
+                        $fileName = $filedata['file_name'];
+                        
+                        $data['img_src']=$fileName;
+                    } 
+                }
+
                 $status= $this->edit->updateInfo($data, 'events', 'id' , $id);
 
                 if($status){
+                    unlink($unlink);
                     $this->session->set_flashdata('success','Event updated !' );
                     redirect('Admin/events');
                 }
@@ -255,6 +281,22 @@ class Edit extends MY_Controller {
             else{
                 $this->session->set_flashdata('failed',strip_tags(validation_errors()));
                 redirect('Admin/events');
+            }
+        }
+
+        public function delEventImage($id)
+        {
+            $old_img= $this->fetch->getInfoById('events','id',$id);
+            $unlink= 'assets/images/'.$old_img->img_src;
+            $status= $this->edit->updateInfo(['img_src'=>null] , 'events', 'id' , $id);
+            if($status){
+                unlink($unlink);
+                $this->session->set_flashdata('success','Event image deleted' );
+                redirect('Edit/event/'.$id);
+            }
+            else{
+                $this->session->set_flashdata('failed','Error !');
+                redirect('Edit/event/'.$id);
             }
         }
 

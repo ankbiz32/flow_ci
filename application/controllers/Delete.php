@@ -26,6 +26,7 @@ class Delete extends MY_Controller {
         }
 
 
+
         public function image($id)
         {
             $old_img= $this->fetch->getInfoById('gallery','id',$id);

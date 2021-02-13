@@ -32,7 +32,32 @@
                         <label for="heading">Heading <span class="text-danger">*</span> :</label>
                         <input type="text" name="heading" id="heading" class="form-control" value="<?=isset($data->heading) ? $data->heading : '' ?>" required>
                     </div>
-                    <div class="row">
+                    
+                    <div class="form-group mb-0">
+                        <label for="img" class="text-sm mr-2 pt-2">Image for event (optional):</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="img" name="img">
+                            <label class="custom-file-label" for="customFile">Choose image</label>
+                        </div>
+                    </div>
+                    <?php if(isset($data)){
+                        if($data->img_src){
+                    ?>
+                    <div class="row  mt-2">
+                        <div class="col">
+                            <img src="<?=base_url('assets/images/').$data->img_src?>" alt="" height="60"> <br>
+                            <a href="<?=base_url('Edit/delEventImage/'.$data->id)?>" class="text-danger">x Remove this image</a>
+                        </div>
+                    </div>
+                    <?php } else{ ?>
+                    <div class="row mt-0">
+                        <div class="col">
+                            <em class="text-muted">No image was uploaded for this event</em>
+                        </div>
+                    </div>
+                    <?php } }?>
+
+                    <div class="row mt-4">
                         <div class="form-group col-sm-6">
                             <label for="date">Date <span class="text-danger">*</span> :</label>
                             <input type="text" name="date" id="date" class="form-control" value="<?=isset($data->date) ? $data->date : '' ?>" required>
