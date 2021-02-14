@@ -9,9 +9,16 @@ class Home extends MY_Controller {
 	}
 
 	public function index(){
-		
+		// $profile=$this->fetch->getWebProfile();
+		// $blogs=$this->fetch->getBlogsByOrder();
+		// $blogCategories=$this->fetch->getBlogCategories();
+		// $this->load->view('header',['profile'=>$profile , 
+		// 							'blogs' => $blogs,
+		// 							'blogCategories'=> $blogCategories
+		// 							]);
+		$this->load->view('header');
 		$this->load->view('blog_main');
-		// $this->All_blogs('_all');
+		$this->load->view('footer');
 	}
 
 
@@ -44,7 +51,9 @@ class Home extends MY_Controller {
 
 	public function blog_post($id)
 	{
+		$this->load->view('header');
 		$this->load->view('blog_post');
+		$this->load->view('footer');
 	}
 
 	public function categories()

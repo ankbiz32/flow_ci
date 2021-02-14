@@ -39,8 +39,9 @@ $('.feedback-container').owlCarousel({
 
 
 function openDrop() {
-    document.getElementById("openDrop").classList.toggle("dropped");
-  }
+  document.getElementById("openDrop").classList.toggle("dropped");
+  $('.main-link').css('z-index','-1');
+}
   
   // Close the dropdown if the user clicks outside of it
   window.onclick = function(event) {
@@ -53,6 +54,7 @@ function openDrop() {
           openDropdown.classList.remove('dropped');
         }
       }
+      $('.main-links').css('z-index','1');
     }
   }
 
