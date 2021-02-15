@@ -43,7 +43,7 @@
     <header class="py-4 blur">
         <div class="blur-bg" id="blurbg"></div>
         <div class="container wrapper d-flex justify-content-between align-items-center">
-            <a href="index.html" class="logo">
+            <a href="<?=base_url()?>" class="logo">
                 <img src="<?=base_url()?>assets/images/flow-logo.png" alt="" height="90">
             </a>
             <input type="checkbox" id="navcheck" role="button" title="menu">
@@ -56,27 +56,27 @@
                 <h5 class="menu-txt-2">Close</h5>
             </label>
             <nav id="menu">
-                <a href="index.html" class="main-link">HOME</a>
-                <a href="about.html" class="main-link">ABOUT</a>
-                <a href="events.html" class="main-link">EVENTS</a>
+                <a href="<?=base_url()?>" class="main-link">HOME</a>
+                <a href="<?=base_url('about-us')?>" class="main-link">ABOUT</a>
+                <a href="<?=base_url('events')?>" class="main-link">EVENTS</a>
                 <div class="btnDrop-con">
                     <a onclick="openDrop()" class="btnDrop">
                         PROGRAMS
                         <i class="fa fa-caret-down fa-sm"></i>
                         <div class="openDrop" id="openDrop">
-                            <a href="program-flow.html" class="drop-item d-flex flex-nowrap sp my-0">
+                            <a href="<?=base_url('program-flow')?>" class="drop-item d-flex flex-nowrap sp my-0">
                                 <img src="<?=base_url()?>assets/images/stuProg.svg" alt="" height="50" class="mr-2">
                                 <span>
-                                    <strong>Free To Learn Our Way (FLOW)</strong>
+                                    <strong>Free to Learn Our Way (FLOW)</strong>
                                     <br>
                                     <span class="text-muted">Program for students</span>
                                 </span>
                             </a>
                             <hr>
-                            <a href="program-wolf.html" class="drop-item d-flex flex-nowrap sp my-0">
+                            <a href="<?=base_url('program-wolf')?>" class="drop-item d-flex flex-nowrap sp my-0">
                                 <img src="<?=base_url()?>assets/images/teacProg.svg" alt="" height="50" class="mr-2">
                                 <span>
-                                    <strong> Workshops On Learning & Facilitation (WOLF) </strong>
+                                    <strong> Workshops On Learning and Facilitation (WOLF) </strong>
                                     <br>
                                     <span class="text-muted">Program for teachers</span>
                                 </span>
@@ -84,8 +84,9 @@
                         </div>
                     </a>
                 </div>
-                <a href="#" class="main-link">BLOG</a>
-                <a href="contact.html" class="main-link">CONTACT</a>
+                <a href="<?=base_url('gallery')?>" class="main-link">GALLERY</a>
+                <a href="<?=base_url('blog')?>" class="main-link">BLOG</a>
+                <a href="<?=base_url('contact-us')?>" class="main-link">CONTACT</a>
             </nav>
         </div>
     </header>

@@ -17,6 +17,55 @@ class Home extends MY_Controller {
 		// 							'blogCategories'=> $blogCategories
 		// 							]);
 		$this->load->view('header');
+		$this->load->view('home');
+		$this->load->view('footer');
+	}
+
+	public function about(){
+		$this->load->view('header');
+		$this->load->view('about');
+		$this->load->view('footer');
+	}
+
+	public function events(){
+		$this->load->view('header');
+		$this->load->view('events');
+		$this->load->view('footer');
+	}
+
+	public function contact(){
+		$this->load->view('header');
+		$this->load->view('contact');
+		$this->load->view('footer');
+	}
+
+	public function gallery(){
+		$this->load->view('header');
+		$this->load->view('gallery');
+		$this->load->view('footer');
+	}
+
+	public function flow(){
+		$this->load->view('header');
+		$this->load->view('program-flow');
+		$this->load->view('footer');
+	}
+
+	public function wolf(){
+		$this->load->view('header');
+		$this->load->view('program-wolf');
+		$this->load->view('footer');
+	}
+
+	public function blog(){
+		// $profile=$this->fetch->getWebProfile();
+		// $blogs=$this->fetch->getBlogsByOrder();
+		// $blogCategories=$this->fetch->getBlogCategories();
+		// $this->load->view('header',['profile'=>$profile , 
+		// 							'blogs' => $blogs,
+		// 							'blogCategories'=> $blogCategories
+		// 							]);
+		$this->load->view('header');
 		$this->load->view('blog_main');
 		$this->load->view('footer');
 	}
