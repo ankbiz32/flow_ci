@@ -130,11 +130,11 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="bg-blob intervention"></div>
-                    Intervention <br> (Act and experience)
+                    Intervention <br> (Act and Experience)
                 </div>
                 <div class="col-sm-4 reflect-con">
                     <div class="bg-blob reflect"></div>
-                    Reflect <br> (Self evaluation)
+                    Reflect <br> (Self-evaluation)
                 </div>
             </div>
 

@@ -93,7 +93,7 @@
                                 <div class=""><i class="fa fa-phone"></i></div>
                                 <div class="col">
                                     0771-4902000 <br>
-                                    +91-9766720007
+                                    +91-8518920001
                                 </div>
                             </div>
                         </div>
@@ -129,13 +129,13 @@
                 <div class="col-sm-4 mb-sm-0 mb-2">
                     <h5 class="mb-sm-4 mb-3">QUICK LINKS:</h5>
                     <div class="row">
-                        <a href="index.html" class="col-4 mb-2">Home</a>
-                        <a href="events.html" class="col-4 mb-2">Events</a>
-                        <a href="about.html" href="about.html" class="col-4 mb-2">About us</a>
-                        <a href="contact.html" class="col-4 mb-2">Contact</a>
-                        <!-- <a class="col-4 mb-2">Gallery</a> -->
+                        <a href="<?=base_url()?>" class="col-4 mb-2">Home</a>
+                        <a href="<?=base_url('events')?>" class="col-4 mb-2">Events</a>
+                        <a href="<?=base_url('about-us')?>" href="about.html" class="col-4 mb-2">About us</a>
+                        <a href="<?=base_url('contact-us')?>" class="col-4 mb-2">Contact</a>
+                        <a href="<?=base_url('gallery')?>" class="col-4 mb-2">Gallery</a>
                         <!-- <a class="col-4 mb-2">Programs</a> -->
-                        <a class="col-4 mb-2">Site map</a>
+                        <!-- <a class="col-4 mb-2">Site map</a> -->
                         <!-- <a href="privacy-policy.html" class="col-4 mb-2">Privacy Policy</a> -->
                     </div>
                 </div>

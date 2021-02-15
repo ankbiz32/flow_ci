@@ -4,7 +4,7 @@
         <div class="container">
             <div class="intro">
                 <h1 class="mb-2">Gallery </h1>
-                <p class="mt-4 mb-5 mx-auto">Get into the flow with us & see our precious moments</p>
+                <p class="mt-4 mb-5 mx-auto">Experience tapping into the Flow with some stills and glimpses of our programs</p>
             </div>
         </div>
         <div class="blobs">

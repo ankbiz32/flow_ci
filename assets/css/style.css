@@ -855,7 +855,7 @@ footer hr {
 
 .about-main .quesImg {
   position: absolute;
-  right: -6px;
+  right: 5px;
   top: 45%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -1083,7 +1083,7 @@ footer hr {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
   text-align: center;
-  width: 90%;
+  width: 100%;
 }
 
 .program-hero-sec .blob-teal {
@@ -1779,6 +1779,8 @@ footer hr {
     z-index: -1 !important;
     height: 260px;
     top: 0;
+    right: -60px;
+    /* display: none; */
   }
   .about-main h1 {
     font-size: 24px;

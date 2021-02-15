@@ -11,7 +11,7 @@
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content rounded-0">
                 <div class="modal-header p-0">
-                    <img src="./assets/images/16.jpeg" alt="" style="width: 100%; height: unset;">
+                    <img src="<?=base_url()?>assets/images/16.jpeg" alt="" style="width: 100%; height: unset;">
                     <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 <h4><span class="flow-blue">F</span>ree to <span class="flow-red">L</span>earn <span class="flow-orange">O</span>ur <span class="flow-yellow">W</span>ay</h4>
                 <p class="mt-4 mb-5 mx-auto">It all began with a question, ‘What was something that was not a part of my education, but I wish it was!’</p>
                 <a href="#about" id="nextPage" class="link">
-                    <small class="text-dark">READ MORE</small>
+                    <small class="text-dark">FLOW BELOW</small>
                     <div class="mouse">
                         <span class="m_scroll_arrows unu"></span>
                         <span class="m_scroll_arrows doi"></span>
@@ -53,7 +53,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-sm-5">
-                    <img src="./assets/images/about1.png" alt="">
+                    <img src="<?=base_url()?>assets/images/about1.png" alt="">
                 </div>
                 <!-- <div class="col-sm-1"></div> -->
                 <div class="col-sm-7 mt-sm-0 mt-5 content-con">
@@ -65,7 +65,7 @@
                             <span class="w mr-1">w</span>
                         </span> &nbsp;is... here</h2>
                         <p class="mb-4"><strong>Flow</strong> began with an idea of a world with a vision of kinder kids, emotionally learned beings, socially inclusive students with a sense of community spirit, humane communication, happier folks, facilitating We(s) in the world of I(s) and of people in touch with their inner world with all of its landscapes, flowers, dreams and power. With research of over 1 year, we have wrapped it all up in our program,' Free to Learn Our Way'</p>
-                        <a href="about.html" class="sec-btn">READ MORE</a>
+                        <a href="<?=base_url('about-us')?>" class="sec-btn">READ MORE</a>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col-sm-2 heading">
                     <h1>CURRENT EVENTS</h1>
-                    <a href="events.html" class="sec-btn">SEE ALL</a>
+                    <a href="<?=base_url('events')?>" class="sec-btn">SEE ALL</a>
                 </div>
                 <div class="col-sm-10">
                     <div class="row justify-content-between">
@@ -119,30 +119,30 @@
             <div class="row">
                 <div class="col-sm-2 heading">
                     <h1>OUR GALLERY</h1>
-                    <!-- <a href="#" class="sec-btn">SEE ALL</a> -->
+                    <a href="<?=base_url('gallery')?>" class="sec-btn">SEE ALL</a>
                 </div>
                 <div class="col-sm-10">
                     <div class="row no-gutters content">
-                        <!-- <a href="./assets/images/12.jpeg" class="col-sm-4 spotlight">
-                            <img src="./assets/images/12.jpeg" alt="">
+                        <!-- <a href="<?=base_url()?>assets/images/12.jpeg" class="col-sm-4 spotlight">
+                            <img src="<?=base_url()?>assets/images/12.jpeg" alt="">
                         </a> -->
-                        <a href="./assets/images/12.jpeg" class="col-sm-4 spotlight">
+                        <a href="<?=base_url()?>assets/images/12.jpeg" class="col-sm-4 spotlight">
                             <iframe src="https://www.youtube.com/embed/pZATNcM3yQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </a>
-                        <a href="./assets/images/2.jpeg" class="col-sm-4 spotlight">
-                            <img src="./assets/images/2.jpeg" alt="">
+                        <a href="<?=base_url()?>assets/images/2.jpeg" class="col-sm-4 spotlight">
+                            <img src="<?=base_url()?>assets/images/2.jpeg" alt="">
                         </a>
-                        <a href="./assets/images/7.jpeg" class="col-sm-4 spotlight">
-                            <img src="./assets/images/7.jpeg" alt="">
+                        <a href="<?=base_url()?>assets/images/7.jpeg" class="col-sm-4 spotlight">
+                            <img src="<?=base_url()?>assets/images/7.jpeg" alt="">
                         </a>
-                        <a href="./assets/images/8.jpeg" class="col-sm-4 spotlight">
-                            <img src="./assets/images/8.jpeg" alt="">
+                        <a href="<?=base_url()?>assets/images/8.jpeg" class="col-sm-4 spotlight">
+                            <img src="<?=base_url()?>assets/images/8.jpeg" alt="">
                         </a>
-                        <a href="./assets/images/1.jpeg" class="col-sm-4 spotlight">
-                            <img src="./assets/images/1.jpeg" alt="">
+                        <a href="<?=base_url()?>assets/images/1.jpeg" class="col-sm-4 spotlight">
+                            <img src="<?=base_url()?>assets/images/1.jpeg" alt="">
                         </a>
-                        <a href="./assets/images/16.jpeg" class="col-sm-4 spotlight">
-                            <img src="./assets/images/16.jpeg" alt="">
+                        <a href="<?=base_url()?>assets/images/16.jpeg" class="col-sm-4 spotlight">
+                            <img src="<?=base_url()?>assets/images/16.jpeg" alt="">
                         </a>
                     </div>
                 </div>
@@ -245,16 +245,19 @@
                 <span aria-hidden="true">&times;</span>
               </button>
               <h3 class="mb-4 pr-sm-2 pr-4  text-center">Free to Learn Our Way Program Launch</h3>
-              <p class="mb-1 text-center">Venue &nbsp;: <strong>&nbsp;TBA (Jagdalpur)</strong></p>
-            <p class="mt-0 text-center mb-sm-4">Date &emsp;:  <strong>&nbsp;6th February 2021</strong></p>
-            <p>
-                FLOW invites all the principals and coordinators of all the renowned schools of Jagdalpur to experience the program and get a glimpse of the journey that we are to embark on. FLOW began with a question, ‘What was something that was not a part of my education, but I wish it was!’, and from then on, we are constantly striving to serve the future generations by adding every possible element of life that is of utmost importance.
-                <br>
-                FLOW does not only cater to one side of the coin, which is why we have also addressed the needs of the facilitators through the WOLF initiative program (Workshop on Learning and Facilitation) which is a mirror image of ‘FLOW’ as students are a mirror reflection of the teachers that tutor them for life. <br>
-                The WOLF initiative program was created with an intent to provide the teachers an underpinning insight about purposeful teaching methods, soft skills development, lesson planning, phonetics, and work-life balance etc.  We assure you these sessions cover just the tip of the iceberg.
-                <br>
-                The entire team at FLOW will be honored by your presence and we sincerely await your arrival. To get in touch with us and be a part of our program launch, kindly register at the link given below:
-            </p>
+              <p class="mb-3 text-center">
+                    Venue: <strong>TBA (Jagdalpur)</strong>
+                    <br>
+                    Date:  <strong>6th February 2021</strong>
+                </p>
+                <p>
+                    FLOW invites all the principals and coordinators of all the renowned schools of Jagdalpur to experience the program and get a glimpse of the journey that we are to embark on. FLOW began with a question, ‘What was something that was not a part of my education, but I wish it was!’, and from then on, we are constantly striving to serve the future generations by adding every possible element of life that is of utmost importance.
+                    <br>
+                    FLOW does not only cater to one side of the coin, which is why we have also addressed the needs of the facilitators through the WOLF initiative program (Workshop on Learning and Facilitation) which is a mirror image of ‘FLOW’ as students are a mirror reflection of the teachers that tutor them for life. <br>
+                    The WOLF initiative program was created with an intent to provide the teachers an underpinning insight about purposeful teaching methods, soft skills development, lesson planning, phonetics, and work-life balance etc.  We assure you these sessions cover just the tip of the iceberg.
+                    <br>
+                    The entire team at FLOW will be honored by your presence and we sincerely await your arrival. To get in touch with us and be a part of our program launch, kindly register at the link given below:
+                </p>
             
             </div>
           </div>
@@ -269,28 +272,30 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-              <div class="text-center"></div><img src="./assets/images/event1.png" alt="">
+              <div class="text-center"></div><img src="<?=base_url()?>assets/images/event1.png" alt="">
               <h3 class="mb-4 mt-3 text-center">Happiness and Well-being Workshop</h3>
-              <p class="mb-1 text-center">Venue &nbsp;: <strong>&nbsp;B.P Pujari English Medium School (Raipur)</strong></p>
-            <p class="mt-0 text-center mb-sm-4">Date &emsp;:  <strong>&nbsp;31st January 2021</strong></p>
-            <p>
-                Flow is all set to deliver a fun-packed session on happiness and well-being, which aims at re-energizing everyone’s waning spirits after having experienced a long period of isolation. This training program projects at giving new insights into the concept of happiness through various activities. Not only this, but every person attending the program is sure to get a space to explore, reflect and share their own personal ideas of happiness. Adding to the above there will be sharing of tools that the teachers can carry for lifetime to reorient and prioritize different aspects of their lives and well-being. 
-                <br><br>
-                What to expect? <br>
-                -	Experiential learning <br>
-                -	Sharing of thoughts <br>
-                -	Fun packed activities <br>
-                -	Tips and tricks for overall well-being.  <br>
-                -	Timeless tools to navigate life <br>
+              
+                <span class="d-block">Venue: <strong>B.P Pujari English Medium School (Raipur)</strong></span>
+                <span class="d-block">Date:  <strong>31st January 2021</strong></span>
                 <br>
-                Tap into the Flow for more fun and exciting events.
-                <br>
-                <br>
-                Facilitator's name:   Mr. Jenis Lunkad <br>
-                Co-facilitators:      Mr. Calvin Cubbins <br>
-                                     Mrs. Raveena Bhui 
+                <p>
+                    Flow is all set to deliver a fun-packed session on happiness and well-being, which aims at re-energizing everyone’s waning spirits after having experienced a long period of isolation. This training program projects at giving new insights into the concept of happiness through various activities. Not only this, but every person attending the program is sure to get a space to explore, reflect and share their own personal ideas of happiness. Adding to the above there will be sharing of tools that the teachers can carry for lifetime to reorient and prioritize different aspects of their lives and well-being. 
+                    <br><br>
+                    What to expect? <br>
+                    -	Experiential learning <br>
+                    -	Sharing of thoughts <br>
+                    -	Fun packed activities <br>
+                    -	Tips and tricks for overall well-being.  <br>
+                    -	Timeless tools to navigate life <br>
+                    <br>
+                    Tap into the Flow for more fun and exciting events.
+                    <br>
+                    <br>
+                    Facilitator's name:   Mr. Jenis Lunkad <br>
+                    Co-facilitators:      Mr. Calvin Cubbins <br>
+                                        Mrs. Raveena Bhui 
 
-            </p>
+                </p>
             
             </div>
           </div>
