@@ -23,27 +23,19 @@
             <div class="row">
                 <div class="col">
                     <div class="row content">
-                        <!-- <a href="./assets/images/12.jpeg" class="col-sm-4 spotlight">
-                            <img src="./assets/images/12.jpeg" alt="">
-                        </a> -->
-                        <a href="./assets/images/12.jpeg" class="col-sm-4 spotlight">
+                        <a class="col-sm-4 spotlight">
                             <iframe src="https://www.youtube.com/embed/pZATNcM3yQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </a>
-                        <a href="./assets/images/2.jpeg" class="col-sm-4 spotlight">
-                            <img src="./assets/images/2.jpeg" alt="">
-                        </a>
-                        <a href="./assets/images/7.jpeg" class="col-sm-4 spotlight">
-                            <img src="./assets/images/7.jpeg" alt="">
-                        </a>
-                        <a href="./assets/images/8.jpeg" class="col-sm-4 spotlight">
-                            <img src="./assets/images/8.jpeg" alt="">
-                        </a>
-                        <a href="./assets/images/1.jpeg" class="col-sm-4 spotlight">
-                            <img src="./assets/images/1.jpeg" alt="">
-                        </a>
-                        <a href="./assets/images/16.jpeg" class="col-sm-4 spotlight">
-                            <img src="./assets/images/16.jpeg" alt="">
-                        </a>
+                        <?php foreach($gallery as $g){
+                            if($g->img_or_vid=='vid'){?>
+                                <a class="col-sm-4 spotlight">
+                                    <iframe src="<?=$g->img_src?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </a>
+                            <?php } else{?>
+                                <a href="<?=base_url('assets/images/').$g->img_src?>" class="col-sm-4 spotlight">
+                                    <img src="<?=base_url('assets/images/').$g->img_src?>" alt="">
+                                </a>
+                            <?php } }?>
                     </div>
                 </div>
             </div>

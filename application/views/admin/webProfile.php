@@ -32,8 +32,8 @@
                       <span><?=$profile->phone1; ?></span> <br><br>
                       <label class="label">Contact no.: <span class="text-muted"> &nbsp;(Alt)</span></label><br>
                       <span><?=$profile->phone2; ?></span> <br><br>
-                      <label class="label">Whatsapp no.:</label><br>
-                      <span><?=$profile->whatsapp_no; ?></span> <br><br>
+                      <!-- <label class="label">Whatsapp no.:</label><br>
+                      <span><?=$profile->whatsapp_no; ?></span> <br><br> -->
                       <label class="label">Address:</label><br>
                       <span><?=nl2br($profile->address)?></span><br><br>
                     </div>
@@ -86,13 +86,13 @@
                         <label for="phone2">Contact no. : <span class="text-muted">&nbsp;(Alt)</span> </label>
                         <input type="text" class="form-control" name="phone2" id="phone2" value="<?=$profile->phone2; ?>" >
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="whatsapp_no">Whatsapp no. : </label>
                         <input type="text" class="form-control" name="whatsapp_no" id="whatsapp_no" value="<?=$profile->whatsapp_no; ?>" required>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="address_line1">Address:</label>
-                        <textarea class="form-control" name="address" id="address_line1" rows="5"><?=nl2br($profile->address) ?></textarea>
+                        <textarea class="form-control" name="address" id="address_line1" rows="5"><?=$profile->address ?></textarea>
                     </div>
                   </div>
                   <div class="col">

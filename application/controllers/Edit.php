@@ -221,6 +221,41 @@ class Edit extends MY_Controller {
         }
 
 
+        public function video($id)
+        {
+            $vid= $this->fetch->getInfoById('gallery', 'id', $id);
+            $this->load->view('admin/adminheader',['adminTitle'=>'Edit video',
+                                                    'vid'=>$vid,
+                                                    'submissonPath'=>base_url().'Edit/updateVideo/'.$id,
+                                                    'data'=>$id
+                                                ]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/video-form'); 
+                $this->load->view('admin/adminfooter');   
+        }
+
+        public function updateVideo($id)
+        {
+            if( $this->input->post()!=null ){
+                $data = $this->input->post();
+                $status= $this->edit->updateInfo($data, 'gallery', 'id' , $id);
+
+                if($status){
+                    $this->session->set_flashdata('success','Video updated !' );
+                    redirect('Admin/gallery');
+                }
+                else{
+                    $this->session->set_flashdata('failed','Error !');
+                    redirect('Admin/gallery');
+                }
+            }
+            else{
+                $this->session->set_flashdata('failed','Please set the link for the video');
+                redirect('Admin/gallery');
+            }
+        }
+
+
         
         public function event($id)
         {

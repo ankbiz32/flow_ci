@@ -206,6 +206,38 @@ class Add extends MY_Controller {
                 redirect('Admin/gallery');
             }
         }
+        
+
+        public function video()
+        {
+            $this->load->view('admin/adminheader',['adminTitle'=>'Add video',
+                                                'submissonPath'=>'saveVideo'
+                                                ]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/video-form'); 
+                $this->load->view('admin/adminfooter');   
+        }
+
+        public function saveVideo()
+        {
+            if( $this->input->post()!=null ){
+                $data = $this->input->post();
+                $data['img_or_vid'] = 'vid';
+                $status= $this->save->saveInfo('gallery',$data);
+                if($status){
+                    $this->session->set_flashdata('success','Video added !' );
+                    redirect('Admin/gallery');
+                }
+                else{
+                    $this->session->set_flashdata('failed','Error !');
+                    redirect('Admin/gallery');
+                }
+            }
+            else{
+                $this->session->set_flashdata('failed','Please set the embedd link for the video');
+                redirect('Admin/gallery');
+            }
+        }
 
 
 

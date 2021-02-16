@@ -84,7 +84,7 @@ section {
 
 .intro h1 {
   font-size: 4em;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .intro p {
@@ -267,7 +267,7 @@ section {
 }
 
 .about-sec .content-con .content h2 {
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .about-sec .content-con .content p {
@@ -460,7 +460,7 @@ section {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .gallery-sec .content iframe {
   height: 250px;
@@ -469,7 +469,7 @@ section {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-     margin-bottom: 30px;
+     margin-bottom: 20px;
    }
 }
 
@@ -869,7 +869,7 @@ footer hr {
 }
 
 .about-main h1 {
-  font-weight: 800;
+  /* font-weight: 800; */
 }
 
 .about-main .question {
@@ -1102,7 +1102,7 @@ footer hr {
 }
 
 .program .overview {
-  margin-bottom: 100px;
+  margin-bottom: 130px;
 }
 
 .program .overview .heading {

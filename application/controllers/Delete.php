@@ -44,6 +44,19 @@ class Delete extends MY_Controller {
             }
         }
 
+        public function video($id)
+        {
+            $status= $this->delete->deleteInfo('gallery', 'id', $id);
+            if($status){
+                $this->session->set_flashdata('success','Video removed!');
+                redirect('Admin/gallery');
+            }
+            else{
+                $this->session->set_flashdata('failed','Error!');
+                redirect('Admin/gallery');
+            }
+        }
+
 
         public function feedback($id)
         {

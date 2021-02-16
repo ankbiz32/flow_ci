@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2021 at 07:07 PM
+-- Generation Time: Feb 16, 2021 at 01:32 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -130,7 +130,7 @@ INSERT INTO `blog_tags` (`id`, `tag`, `tag_date`) VALUES
 
 CREATE TABLE `enquiries` (
   `id` int(11) NOT NULL,
-  `date` date NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
   `name` varchar(255) NOT NULL,
   `org_name` varchar(500) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -138,6 +138,14 @@ CREATE TABLE `enquiries` (
   `message` varchar(2048) NOT NULL,
   `status` varchar(10) NOT NULL DEFAULT 'new'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `enquiries`
+--
+
+INSERT INTO `enquiries` (`id`, `date`, `name`, `org_name`, `email`, `phone`, `message`, `status`) VALUES
+(24, '0000-00-00 00:00:00', 'sdfsdgfg', 'dfgdfg ger  org', 'sdfgsd@sgfdg', '6565656565565', '', 'new'),
+(25, '2021-02-16 11:19:16', 'dfgbdfg', 'dfgdfgdfg wsfgfger r r', 're gerger@sgsdfg', '65595+95650', '', 'new');
 
 -- --------------------------------------------------------
 
@@ -162,7 +170,7 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `heading`, `img_src`, `short_descr`, `full_descr`, `date`, `venue`, `created_at`, `updated_at`) VALUES
-(1, 'Flow program launch insta', 'fb.jpg', 'sdsdsdsd', 'Flow program launch with descr Flow program launch with descr Flow program launch with descr Flow program launch with descr Flow program launch with descr Flow program launch with descr ', '2nd February 1970', 'Some school , Raipur (C.G.)', '2021-02-11 05:44:19', '2021-02-11 05:44:19'),
+(1, 'Flow program launch insta', 'insta.jpg', 'sdsdsdsd', 'Flow program launch with descr Flow program launch with descr Flow program launch with descr Flow program launch with descr Flow program launch with descr Flow program launch with descr ', '2nd February 1970', 'Some school , Raipur (C.G.)', '2021-02-11 05:44:19', '2021-02-11 05:44:19'),
 (3, 'New event wa', NULL, '', '<p>sdfdsf</p>', '21-02-21', 'dsdcssdfsdf', '2021-02-13 17:45:00', '2021-02-13 17:45:00');
 
 -- --------------------------------------------------------
@@ -185,8 +193,8 @@ CREATE TABLE `feedbacks` (
 --
 
 INSERT INTO `feedbacks` (`id`, `name`, `help_text`, `message`, `created_at`, `updated_at`) VALUES
-(1, 'Mr. Gaurav Kiran', '- Teaching experience: 2.5+ years', 'I liked it very much, the whole program was well organized, the meditation and group activities part was amazing. This program can help students be more social and practical about their life.!', '2021-02-11 07:25:42', '2021-02-11 07:25:42'),
-(2, 'Mrs.Anju Sood (Principal)', '- Teaching experience: 34+ Years', ' An excellent program for teachers & students. It can aid schools in preparing the students to navigate the downsides and difficulties of life. It is a program that will definitely make a positive impact.', '2021-02-11 07:26:30', '2021-02-11 07:26:30');
+(1, 'Mr. Gaurav Kiran', 'Teaching experience: 2.5+ years', 'I liked it very much, the whole program was well organized, the meditation and group activities part was amazing. This program can help students be more social and practical about their life.!', '2021-02-11 07:25:42', '2021-02-11 07:25:42'),
+(2, 'Mrs.Anju Sood (Principal)', 'Teaching experience: 34+ Years', 'An excellent program for teachers & students. It can aid schools in preparing the students to navigate the downsides and difficulties of life. It is a program that will definitely make a positive impact.', '2021-02-11 07:26:30', '2021-02-11 07:26:30');
 
 -- --------------------------------------------------------
 
@@ -198,6 +206,7 @@ CREATE TABLE `gallery` (
   `id` int(11) NOT NULL,
   `img_src` varchar(1000) NOT NULL,
   `caption` varchar(500) NOT NULL,
+  `img_or_vid` varchar(10) NOT NULL DEFAULT 'img',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -206,12 +215,12 @@ CREATE TABLE `gallery` (
 -- Dumping data for table `gallery`
 --
 
-INSERT INTO `gallery` (`id`, `img_src`, `caption`, `created_at`, `updated_at`) VALUES
-(1, '16.jpeg', '', '2021-02-11 11:03:36', '2021-02-11 11:03:36'),
-(2, '1.jpeg', '', '2021-02-11 11:03:36', '2021-02-11 11:03:36'),
-(3, '8.jpeg', '', '2021-02-11 11:03:50', '2021-02-11 11:03:50'),
-(4, '7.jpeg', '', '2021-02-11 11:03:50', '2021-02-11 11:03:50'),
-(5, '6.jpeg', '', '2021-02-11 11:03:56', '2021-02-11 11:03:56');
+INSERT INTO `gallery` (`id`, `img_src`, `caption`, `img_or_vid`, `created_at`, `updated_at`) VALUES
+(1, '16.jpeg', '', 'img', '2021-02-11 11:03:36', '2021-02-11 11:03:36'),
+(2, '1.jpeg', '', 'img', '2021-02-11 11:03:36', '2021-02-11 11:03:36'),
+(3, '8.jpeg', '', 'img', '2021-02-11 11:03:50', '2021-02-11 11:03:50'),
+(4, '7.jpeg', '', 'img', '2021-02-11 11:03:50', '2021-02-11 11:03:50'),
+(5, '6.jpeg', '', 'img', '2021-02-11 11:03:56', '2021-02-11 11:03:56');
 
 -- --------------------------------------------------------
 
@@ -234,6 +243,19 @@ CREATE TABLE `notice` (
 
 INSERT INTO `notice` (`id`, `content`, `date`, `file_src`, `link_src`, `file_or_link`) VALUES
 (1, 'Some announcement heres', '2020-03-05', 'g1.jpg', '', 'f');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscriptions`
+--
+
+CREATE TABLE `subscriptions` (
+  `id` int(11) NOT NULL,
+  `email` varchar(500) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -284,7 +306,7 @@ CREATE TABLE `webprofile` (
 --
 
 INSERT INTO `webprofile` (`id`, `email`, `phone1`, `phone2`, `whatsapp_no`, `address`, `fblink`, `instalink`, `linkedinlink`, `latitude`, `longitude`) VALUES
-(1, 'info@flowmenow.in', '0771-4902000', '+91-9766720007', '9766720007', 'D-11, Quoram, VIP Square\r\nGE Road, Raipur\r\nChhattisgarh (492001)', 'https://www.facebook.com/', 'https://www.instagram.com/', 'https://www.linkedin.com/', '', '');
+(1, 'info@flowmenow.in', '0771-4902000', '+91-8518920001', '9766720007', 'D-11, Quoram, VIP Square,\r\nGE Road, Raipur,\r\nChhattisgarh (492001)', 'https://www.facebook.com/', 'https://www.instagram.com/', 'https://www.linkedin.com/', '', '');
 
 --
 -- Indexes for dumped tables
@@ -345,6 +367,12 @@ ALTER TABLE `notice`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `subscriptions`
+--
+ALTER TABLE `subscriptions`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -388,7 +416,7 @@ ALTER TABLE `blog_tags`
 -- AUTO_INCREMENT for table `enquiries`
 --
 ALTER TABLE `enquiries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -406,13 +434,19 @@ ALTER TABLE `feedbacks`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `notice`
 --
 ALTER TABLE `notice`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `subscriptions`
+--
+ALTER TABLE `subscriptions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -66,8 +66,8 @@
                         </span> &nbsp;was founded by <strong>Jenis Lunkad.</strong></h4>
                     <p>With an enthusiastic and passionate team who want to make a social change, we at Flow, envision a future where students are not only taught to be intelligent, but rather learn from an early age the spirit of togetherness, who are emotionally learned and empathetic towards others, kinder and smarter kids, happier and successful, people who look at the Earth as their home understanding that it’s wellbeing is in their hands & not just dwell here as if they are living rent free in an apartment that they can do whatever with, people who see other people as people, people who can create and not just curate, self-empowered beings who honor their own sense of personal power, people who can communicate business proposals as well as their own colorful inner world with all of its storms and beautiful landscapes and flowers, people who can actually be around people, students who are human beings not just human doings. That’s the dream we have.</p>
                     <p>We say our first hello to the world with our flagship programs:
-                        <strong><a href="program-flow.html">Free to Learn Our Way (FLOW)</a></strong>
-                        <strong><a href="program-wolf.html">Workshops On Learning and Facilitation (WOLF)</a></strong></p>
+                        <strong><a href="<?=base_url('program-flow')?>">Free to Learn Our Way (FLOW)</a></strong>
+                        <strong><a href="<?=base_url('program-wolf')?>">Workshops On Learning and Facilitation (WOLF)</a></strong></p>
                 </div>
             </div>
         </div>

@@ -67,8 +67,9 @@
                             <input type="text" name="venue" id="venue" class="form-control" value="<?=isset($data->venue) ? $data->venue : '' ?>" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="short_descr">Short descr. (optional):</label>
+                    <div class="form-group mt-2">
+                        <label for="short_descr mb-0">Short descr. :</label> 
+                        <small>(optional - this will be shown only in the yellow blob)</small>
                         <input type="text" name="short_descr" id="short_descr" class="form-control" value="<?=isset($data->short_descr) ? $data->short_descr : '' ?>">
                     </div>
                     <div class="form-group">

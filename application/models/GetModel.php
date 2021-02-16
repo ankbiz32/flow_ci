@@ -127,6 +127,11 @@ class GetModel extends CI_Model{
     {
         return $this->db->where($col, $id)->get($tbl)->row();
     }
+    
+    public function getLimitInfo($tbl,$lim)
+    {
+        return $this->db->order_by('id', 'DESC')->limit($lim)->get($tbl)->result();
+    }
 
     
 

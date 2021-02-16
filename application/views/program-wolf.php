@@ -153,6 +153,6 @@
                 </div>
             </div>
 
-            <h3 class="text-center mt-5">Why wait? <a href="contact.html">Contact us</a> for a visit to your school for a demo of our program.</h3>
+            <h3 class="text-center mt-5">Why wait? <a href="<?=base_url('contact-us')?>">Contact us</a> for a visit to your school for a demo of our program.</h3>
         </div>
     </div>

@@ -20,27 +20,38 @@
             <div class="card">
               <div class="card-header row">
                 <h2 class="card-title">List of images:</h2> <br>
-                <a href="<?=base_url('Add/image')?>" class="btn btn-primary btn-sm ml-auto">+Add new image</a>
+                <span class="ml-auto">
+                  <a href="<?=base_url('Add/image')?>" class="btn btn-primary btn-sm ">+ Add new image</a>
+                  <a href="<?=base_url('Add/video')?>" class="btn btn-primary btn-sm ml-2">+ Add new video</a>
+                </span>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="bookdt" class="table table-bordered table-hover" style="width:100%;">
                   <thead>
                     <tr>
-                      <th>Image</th>
-                      <!-- <th>Caption</th> -->
+                      <th>Content</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php foreach ($data as $d){?>
                       <tr>
-                        <td><img src="<?=base_url('assets/images/').$d->img_src?>" width="200" alt=""></td>
-                        <!-- <td><?=$d->caption?></td> -->
+                      <?php if($d->img_or_vid=='vid'){?>
                         <td>
-                          <a href="<?=base_url('Delete/image/'.$d->id)?>" onclick="confirmation(event)" class="btn del-btn btn-sm btn-danger mb-1" title="Delete gallery"><i class="fa fa-trash-alt"></i></a>
-                          <a href="<?=base_url('Edit/image/'.$d->id)?>" class="btn btn-primary btn-sm mb-1" title="Edit gallery"><i class="fa fa-edit"></i></a>
+                          <iframe src="<?=$d->img_src?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </td>
+                        <td>
+                          <a href="<?=base_url('Delete/video/'.$d->id)?>" onclick="confirmation(event)" class="btn del-btn btn-sm btn-danger mb-1" title="Delete video"><i class="fa fa-trash-alt"></i></a>
+                          <a href="<?=base_url('Edit/video/'.$d->id)?>" class="btn btn-primary btn-sm mb-1" title="Edit video"><i class="fa fa-edit"></i></a>
+                        </td>
+                      <?php } else{?>
+                          <td><img src="<?=base_url('assets/images/').$d->img_src?>" width="200" alt=""></td>
+                          <td>
+                            <a href="<?=base_url('Delete/image/'.$d->id)?>" onclick="confirmation(event)" class="btn del-btn btn-sm btn-danger mb-1" title="Delete image"><i class="fa fa-trash-alt"></i></a>
+                            <a href="<?=base_url('Edit/image/'.$d->id)?>" class="btn btn-primary btn-sm mb-1" title="Edit image"><i class="fa fa-edit"></i></a>
+                          </td>
+                      <?php }?>
                       </tr>
                     <?php  }?>
 

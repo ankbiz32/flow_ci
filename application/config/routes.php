@@ -56,9 +56,12 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['/'] = 'Home';
 $route['about-us'] = 'Home/about';
+$route['event'] = 'Home/event';
 $route['events'] = 'Home/events';
 $route['contact-us'] = 'Home/contact';
 $route['blog'] = 'Home/blog';
 $route['gallery'] = 'Home/gallery';
 $route['program-flow'] = 'Home/flow';
 $route['program-wolf'] = 'Home/wolf';
+$route['enquire'] = 'Home/enquiry';
+$route['subscribe'] = 'Home/subscribe';
