@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2021 at 01:32 PM
+-- Generation Time: Feb 16, 2021 at 06:58 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -47,12 +47,11 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `heading`, `short_descr`, `date`, `img`, `content`, `url_slug`, `tags`, `category_id`, `authors_id`, `created_at`, `updated_at`) VALUES
-(1, 'How mobile apps are taking over the web apps. up', '0', '2019-12-31 18:30:00', 'js.png', '<p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">Whichever country we may live in, we always have a special place for our mother lands. The economic condition of the country plays a massive role in our lives. However, there are people who always criticize the country and its government for not doing enough. Through this blog, I intend to encourage the youth to act instead of criticizing. Act for what you don’t like, change it.</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">But, the importance of the country’s economic condition needs to be understood for anyone to get encouraged. I have tried doing this by comparing personal growth to economic development. This will help you relate to the country and its economy in a better way. Because we need to stand in someone else’s shoes to understand their situation, right?</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">We all know what does personal growth and economic development means separately. But, have you ever thought that both of these concepts work on similar lines? As in, if you have some personal goals, the economy has it too. Let’s see more about this similarity below.</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">Let’s take Rostow’s economic growth model for the comparison. Walt Whitman Rostow was an economic historian and according to him, there are five stages in economic growth. The stages are: <span style=\"background-color: rgb(255, 255, 0);\">update</span></p>', '', NULL, 1, 0, '2021-02-11 17:46:34', '2021-02-11 17:46:34'),
-(25, 'Security rules to be made more strict by IT industries.', '0', '2020-02-27 18:30:00', '2.jpg', '<p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">Whichever country we may live in, we always have a special place for our mother lands. The economic condition of the country plays a massive role in our lives. However, there are people who always criticize the country and its government for not doing enough. Through this blog, I intend to encourage the youth to act instead of criticizing. Act for what you don’t like, change it.</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">But, the importance of the country’s economic condition needs to be understood for anyone to get encouraged. I have tried doing this by comparing personal growth to economic development. This will help you relate to the country and its economy in a better way. Because we need to stand in someone else’s shoes to understand their situation, right?</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">We all know what does personal growth and economic development means separately. But, have you ever thought that both of these concepts work on similar lines? As in, if you have some personal goals, the economy has it too. Let’s see more about this similarity below.</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">Let’s take Rostow’s economic growth model for the comparison. Walt Whitman Rostow was an economic historian and according to him, there are five stages in economic growth. The stages are:</p>', '', NULL, 1, 0, '2021-02-11 17:46:34', '2021-02-11 17:46:34'),
-(26, 'New age of drones is coming.', '0', '2020-02-27 18:30:00', 'blur-close-up-design-focus-257699.jpg', '<p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">Whichever country we may live in, we always have a special place for our mother lands. The economic condition of the country plays a massive role in our lives. However, there are people who always criticize the country and its government for not doing enough. Through this blog, I intend to encourage the youth to act instead of criticizing. Act for what you don’t like, change it.</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">But, the importance of the country’s economic condition needs to be understood for anyone to get encouraged. I have tried doing this by comparing personal growth to economic development. This will help you relate to the country and its economy in a better way. Because we need to stand in someone else’s shoes to understand their situation, right?</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">We all know what does personal growth and economic development means separately. But, have you ever thought that both of these concepts work on similar lines? As in, if you have some personal goals, the economy has it too. Let’s see more about this similarity below.</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">Let’s take Rostow’s economic growth model for the comparison. Walt Whitman Rostow was an economic historian and according to him, there are five stages in economic growth. The stages are:</p>', '', NULL, 2, 0, '2021-02-11 17:46:34', '2021-02-11 17:46:34'),
-(27, 'SpaceX to launch another rocket.', '0', '2020-02-27 18:30:00', 'burning-dangerous-dark-exploration-355938.jpg', '<p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">Whichever country we may live in, we always have a special place for our mother lands. The economic condition of the country plays a massive role in our lives. However, there are people who always criticize the country and its government for not doing enough. Through this blog, I intend to encourage the youth to act instead of criticizing. Act for what you don’t like, change it.</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">But, the importance of the country’s economic condition needs to be understood for anyone to get encouraged. I have tried doing this by comparing personal growth to economic development. This will help you relate to the country and its economy in a better way. Because we need to stand in someone else’s shoes to understand their situation, right?</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">We all know what does personal growth and economic development means separately. But, have you ever thought that both of these concepts work on similar lines? As in, if you have some personal goals, the economy has it too. Let’s see more about this similarity below.</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">Let’s take Rostow’s economic growth model for the comparison. Walt Whitman Rostow was an economic historian and according to him, there are five stages in economic growth. The stages are:</p>', '', NULL, 3, 0, '2021-02-11 17:46:34', '2021-02-11 17:46:34'),
-(29, 'Industrial blog ff', '0', '2020-03-04 18:30:00', 'internship3.jpg', '<p>Hi</p>', '', NULL, 9, 0, '2021-02-11 17:46:34', '2021-02-11 17:46:34'),
-(32, 'asasdakjalkaj asdj as', '', '2021-01-31 18:30:00', 'insta.jpg', '<p>sdjsd lkvivj pvp vr</p><p>ve </p><p>g 4</p><p>54 </p><p>445</p>', 'asasdakjalkaj-asdj-as', 'aa|bb', 7, NULL, '2021-02-13 18:49:46', '2021-02-13 18:49:46');
+(25, 'Security rules to be made more strict by IT industries.', 'Some little description will be shown here with a lot of helping text for the blog', '2020-02-27 18:30:00', '2.jpg', '<p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">Whichever country we may live in, we always have a special place for our mother lands. The economic condition of the country plays a massive role in our lives. However, there are people who always criticize the country and its government for not doing enough. Through this blog, I intend to encourage the youth to act instead of criticizing. Act for what you don’t like, change it.</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">But, the importance of the country’s economic condition needs to be understood for anyone to get encouraged. I have tried doing this by comparing personal growth to economic development. This will help you relate to the country and its economy in a better way. Because we need to stand in someone else’s shoes to understand their situation, right?</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">We all know what does personal growth and economic development means separately. But, have you ever thought that both of these concepts work on similar lines? As in, if you have some personal goals, the economy has it too. Let’s see more about this similarity below.</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">Let’s take Rostow’s economic growth model for the comparison. Walt Whitman Rostow was an economic historian and according to him, there are five stages in economic growth. The stages are:</p>', 'fvdf', 'tag2|vdv', 1, 0, '2021-02-11 17:46:34', '2021-02-11 17:46:34'),
+(33, 'Blog 1 heading lorem ipsum set dolor set dorset', '', '2021-02-17 18:30:00', 'fb.jpg', '<p>afdefefew</p><p>fwe 4 44t 4t</p>', 'blog-1-heading-lorem-ipsum-set-dolor-set-dorset', 'asd|vdvfv', 7, NULL, '2021-02-16 15:32:37', '2021-02-16 15:32:37'),
+(34, 'School re-opening on 08-June-2020. School re-opening on 08-June-2020. School re-opening on 08-June-2', '', '2021-02-27 18:30:00', 'insta.jpg', '<p>sgrg</p>', 'school-re-opening-on-08-june-2020-school-re-opening-on-08-june-2020-school-re-opening-on-08-june-2', 'tag1|asd', 5, NULL, '2021-02-16 15:32:56', '2021-02-16 15:32:56'),
+(35, 'How is Your Personal Growth and The Economic Development Similar?', 'dscdsv', '2021-02-17 18:30:00', 'whatsapp.jpg', '<p>gdfg</p>', 'how-is-your-personal-growth-and-the-economic-development-similar', 'tag1|tag2|tag3', 6, NULL, '2021-02-16 15:33:28', '2021-02-16 15:33:28'),
+(36, 'Insta2 with another heading', '', '2021-02-12 18:30:00', 'insta1.jpg', '<p>sdsf</p>', 'insta2-with-another-heading', NULL, 6, NULL, '2021-02-16 15:33:56', '2021-02-16 15:33:56');
 
 -- --------------------------------------------------------
 
@@ -139,14 +138,6 @@ CREATE TABLE `enquiries` (
   `status` varchar(10) NOT NULL DEFAULT 'new'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `enquiries`
---
-
-INSERT INTO `enquiries` (`id`, `date`, `name`, `org_name`, `email`, `phone`, `message`, `status`) VALUES
-(24, '0000-00-00 00:00:00', 'sdfsdgfg', 'dfgdfg ger  org', 'sdfgsd@sgfdg', '6565656565565', '', 'new'),
-(25, '2021-02-16 11:19:16', 'dfgbdfg', 'dfgdfgdfg wsfgfger r r', 're gerger@sgsdfg', '65595+95650', '', 'new');
-
 -- --------------------------------------------------------
 
 --
@@ -170,8 +161,8 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `heading`, `img_src`, `short_descr`, `full_descr`, `date`, `venue`, `created_at`, `updated_at`) VALUES
-(1, 'Flow program launch insta', 'insta.jpg', 'sdsdsdsd', 'Flow program launch with descr Flow program launch with descr Flow program launch with descr Flow program launch with descr Flow program launch with descr Flow program launch with descr ', '2nd February 1970', 'Some school , Raipur (C.G.)', '2021-02-11 05:44:19', '2021-02-11 05:44:19'),
-(3, 'New event wa', NULL, '', '<p>sdfdsf</p>', '21-02-21', 'dsdcssdfsdf', '2021-02-13 17:45:00', '2021-02-13 17:45:00');
+(4, 'h1fefef wrrf wfw h1fefef wrrf wfw h1fefef wrrf wfw ', 'insta2.jpg', 'kuhiun h hui huih ui', '<p>uhnh98yn98eyfw 3435g</p><p>t 35 35y54y</p><p>54 y54y 66u6 4</p><p>553h1fefef wrrf wfw&nbsp;h1fefef wrrf wfw&nbsp;h1fefef wrrf wfw&nbsp;h1fefef wrrf wfw&nbsp;&nbsp;h1fefef wrrf wfw&nbsp;h1fefef wrrf wfw&nbsp;</p>', '21-02-21', 'sgregre 3t g egegrezvsvrbe gtegeergerg erg', '2021-02-16 17:49:19', '2021-02-16 17:49:19'),
+(5, 'How is Your Personal Growth', 'fb1.jpg', 'u6u6u 6u', '<p><span style=\"background-color: rgb(255, 255, 0);\">h1fefef wrrf wfw&nbsp;h1fefef wrrf wfw&nbsp;</span></p><p><span style=\"background-color: rgb(255, 255, 0);\">&nbsp; &nbsp;</span></p>', '5vy-506- yrt ', 'sgregre 3t g egegrezvsvrbe gtegeergerg erg', '2021-02-16 17:49:44', '2021-02-16 17:49:44');
 
 -- --------------------------------------------------------
 
@@ -392,7 +383,7 @@ ALTER TABLE `webprofile`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `blog_authors`
@@ -416,13 +407,13 @@ ALTER TABLE `blog_tags`
 -- AUTO_INCREMENT for table `enquiries`
 --
 ALTER TABLE `enquiries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `feedbacks`
@@ -446,7 +437,7 @@ ALTER TABLE `notice`
 -- AUTO_INCREMENT for table `subscriptions`
 --
 ALTER TABLE `subscriptions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`

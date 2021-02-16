@@ -18,6 +18,15 @@ class Admin extends MY_Controller {
                 $this->load->view('admin/adminfooter');  
         }
 
+        public function subscriptions()
+        {
+                $enq=$this->fetch->getInfo('subscriptions');
+                $this->load->view('admin/adminheader',['enq' => $enq]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/subscriptions'); 
+                $this->load->view('admin/adminfooter');  
+        }
+
         public function Blog()
         {
                 $blogs=$this->fetch->getInfo('blogs');

@@ -39,11 +39,19 @@ class Home extends MY_Controller {
 
 
 	public function events(){
+
+		$config = array();
+		$config["base_url"] = base_url() . "events/page";
+		$config["total_rows"] = $this->fetch->record_count('events');
+		$config["per_page"] = 8;
+		$config["uri_segment"] = 3;
+		$this->pagination->initialize($config);
+
+		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 		$profile=$this->fetch->getWebProfile();
-		$events=$this->fetch->getInfo('events');
-		$this->load->view('header',['profile'=>$profile , 
-									'events'=> $events
-									]);
+		$events=$this->fetch->fetch_events($config["per_page"], $page);
+		$pages = $this->pagination->create_links();
+		$this->load->view('header',['profile'=>$profile, 'events'=> $events, 'pages'=>$pages]);
 		$this->load->view('events');
 		$this->load->view('footer');
 	}
@@ -57,11 +65,19 @@ class Home extends MY_Controller {
 	}
 
 	public function gallery(){
+
+		$config = array();
+		$config["base_url"] = base_url() . "gallery/page";
+		$config["total_rows"] = $this->fetch->record_count('gallery');
+		$config["per_page"] = 9;
+		$config["uri_segment"] = 3;
+		$this->pagination->initialize($config);
+
+		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 		$profile=$this->fetch->getWebProfile();
-		$gallery=$this->fetch->getInfo('gallery');
-		$this->load->view('header',['profile'=>$profile , 
-									'gallery'=> $gallery
-									]);
+		$gallery=$this->fetch->fetch_gallery($config["per_page"], $page);
+		$pages = $this->pagination->create_links();
+		$this->load->view('header',['profile'=>$profile, 'gallery'=> $gallery, 'pages'=>$pages]);
 		$this->load->view('gallery');
 		$this->load->view('footer');
 	}
@@ -83,8 +99,51 @@ class Home extends MY_Controller {
 	}
 
 	public function blog(){
+		$config = array();
+		$config["base_url"] = base_url() . "blog/page";
+		$config["total_rows"] = $this->fetch->record_count('blogs');
+		$config["per_page"] = 10;
+		$config["uri_segment"] = 3;
+		$this->pagination->initialize($config);
+
+		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 		$profile=$this->fetch->getWebProfile();
-		$this->load->view('header',['profile'=>$profile
+		$blogs=$this->fetch->fetch_blogs($config["per_page"], $page);
+		$pages = $this->pagination->create_links();
+		$recent=$this->fetch->getLimitInfo('blogs',4);
+		$this->load->view('header',['profile'=>$profile,'blogs'=>$blogs,'pages'=>$pages,'recent'=>$recent
+									]);
+		$this->load->view('blog_main');
+		$this->load->view('footer');
+	}
+
+	public function blog_post($id)
+	{
+		$profile=$this->fetch->getWebProfile();
+		$blog=$this->fetch->getBlog($id);
+		$recent=$this->fetch->getLimitInfo('blogs',4);
+		$this->load->view('header',['profile'=>$profile,'blog'=>$blog,'recent'=>$recent
+									]);
+		$this->load->view('blog_post');
+		$this->load->view('footer');
+	}
+
+	public function blogCat($id){
+		$profile=$this->fetch->getWebProfile();
+		$blogs=$this->fetch->getBlogsByCat($id);
+		$category=$this->fetch->getInfoById('blog_categories','id',$id)->category;
+		$recent=$this->fetch->getLimitInfo('blogs',4);
+		$this->load->view('header',['profile'=>$profile,'blogs'=>$blogs,'recent'=>$recent,'category'=>$category
+									]);
+		$this->load->view('blog_main');
+		$this->load->view('footer');
+	}
+
+	public function blogTag($tag){
+		$profile=$this->fetch->getWebProfile();
+		$blogs=$this->fetch->getBlogsByTag($tag);
+		$recent=$this->fetch->getLimitInfo('blogs',4);
+		$this->load->view('header',['profile'=>$profile,'blogs'=>$blogs,'recent'=>$recent,'tag'=>$tag
 									]);
 		$this->load->view('blog_main');
 		$this->load->view('footer');
@@ -160,53 +219,5 @@ class Home extends MY_Controller {
 		}
 	}
 
-
-	public function All_blogs($_cat)
-	{
-		
-		$config = array();
-		$config["base_url"] = base_url() . "Home/All_blogs/_all/";
-		$config["total_rows"] = $this->fetch->record_count('blogs');
-		$config["per_page"] = 6;
-		$config["uri_segment"] = 4;
-		$this->pagination->initialize($config);
-		$page = ($this->uri->segment(3)) ? $this->uri->segment(4) : 0;
-		$blogData["results"] = $this->fetch->fetch_blogs($config["per_page"], $page);
-		$blogData["links"] = $this->pagination->create_links();
-		$profile=$this->fetch->getWebProfile();
-		$blogs=$this->fetch->getFeaturedBlogs();
-		$ann=$this->fetch->getNotices();
-		$this->load->view('header',['profile'=>$profile, 
-									'featblogs' => $blogs,
-									'ann' => $ann,
-									'blogData'=> $blogData
-									]);
-
-		$this->load->view('blogHeader');
-		$this->load->view('blog');
-		$this->load->view('blogFooter');
-		$this->load->view('footer');
-	}
-
-	public function blog_post($id)
-	{
-		$this->load->view('header');
-		$this->load->view('blog_post');
-		$this->load->view('footer');
-	}
-
-	public function categories()
-	{
-		$profile=$this->fetch->getWebProfile();
-		$blogs=$this->fetch->getBlogsByOrder();
-		$blogCategories=$this->fetch->getBlogCategories();
-		$this->load->view('header',['profile'=>$profile , 
-									'blogs' => $blogs,
-									'blogCategories'=> $blogCategories
-									]);
-		$this->load->view('blogHeader');
-		$this->load->view('blogCategories');
-		$this->load->view('blogFooter');
-		$this->load->view('footer');
-	}
+	
 }

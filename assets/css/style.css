@@ -471,6 +471,9 @@ section {
      object-position: center;
      margin-bottom: 20px;
    }
+
+.gallery-sec-main .content .main-vid iframe {
+  height: 450px !important;
 }
 
 .gallery-sec .blob-baige {
@@ -1403,7 +1406,27 @@ footer hr {
   transform: translateY(0px);
   box-shadow: 0 5px 15px rgba(0,0,0,0);
 }
-
+p.page-no a {
+  padding: 5px 10px;
+  margin-right: 15px;
+  color: black;
+  font-size: 18px;
+  border: 1px solid #666 ;
+  transition: 0.3s;
+}
+p.page-no a:hover {
+  background-color:#00574f;
+  border: 1px solid #00574F ;
+  color: #fff;
+}
+p.page-no strong{
+  padding: 5px 10px;
+  margin-right: 15px;
+  background-color:#00574f;
+  border: 1px solid #00574F ;
+  color: white;
+  font-size: 18px;
+}
 
 .aside .card{
   position: sticky !important;
@@ -1640,6 +1663,10 @@ footer hr {
     margin-bottom: 20px;
     height: 200px;
   }
+  .gallery-sec-main .content .main-vid iframe {
+    height: 250px !important;
+  }
+
   .feedbacks-sec {
     margin-top: 0;
   }

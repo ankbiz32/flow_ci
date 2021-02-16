@@ -359,8 +359,15 @@ header.scrolled label h5{
       -webkit-transform: skewX(-15deg) translateX(39%);
               transform: skewX(-15deg) translateX(39%);
     }
-    nav a {
-      font-size: 1.2em;
+    nav a ,nav .btnDrop-con{
+      font-size: 16px !important;
+    }
+    nav .btnDrop-con{
+      font-size: 16px !important;
+      margin-left: 8px;
+    }
+    nav .btnDrop-con .openDrop a{
+      font-size: 14px !important;
     }
 
     .main-link{
@@ -372,8 +379,8 @@ header.scrolled label h5{
     .openDrop{
       position: absolute;
       top: 60px;
-      right:70px !important;
-      width: 300px;
+      right:60px !important;
+      width: 330px;
     }
     .openDrop .sp{
       margin-left: 25px !important;

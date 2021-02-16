@@ -28,6 +28,13 @@
           </li>
 
           <li class="nav-item">
+            <a href="<?=base_url('Admin/subscriptions')?>" class="nav-link <?php if($this->uri->segment(2)=="subscriptions"){echo ' CustomActive';}?> >">
+              <i class="fas fa-columns nav-icon"></i>
+              <p>Subscriptions</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="<?=base_url('Admin/Blog')?>" class="nav-link <?php if($this->uri->segment(2)=="Blog"){echo ' CustomActive';}?>">
               <i class="fas fa-blog nav-icon"></i>
               <p>Blog</p>

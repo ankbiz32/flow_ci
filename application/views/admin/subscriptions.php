@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark"><i class="fas fa-columns nav-icon"></i> &nbsp;&nbsp;Enquiries</h1>
+                <h1 class="m-0 text-dark"><i class="fas fa-columns nav-icon"></i> &nbsp;&nbsp;Subscriptions</h1>
             </div><!-- /.col -->
          </div><!-- /.row -->
         </div>
@@ -19,21 +19,17 @@
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card">
               <div class="card-header">
-                <h2 class="card-title">Your enquiries:</h2> <br>
+                <h2 class="card-title">Your subscriptions:</h2> <br>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="bookdt" class="table table-bordered table-hover" style="width:100%;">
                   <thead>
                     <tr>
-                      <th>Enq. No</th>
+                      <th>Subscription No</th>
                       <th>Date</th>
-                      <th>Name</th>
-                      <th>Organisation name</th>
                       <th>E-mail</th>
-                      <th>Phone</th>
-                      <th>Message</th>
-                      <th></th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -41,14 +37,10 @@
                     <?php foreach($enq as $enqui){?>
                       <tr>
                         <td><?=$enqui->id?></td>
-                        <td><?=date("d-m-Y",strtotime("$enqui->date"))?></td>
-                        <td><?=$enqui->name?></td>
-                        <td><?=$enqui->org_name?></td>
+                        <td><?=date("d-m-Y",strtotime("$enqui->created_at"))?></td>
                         <td><?=$enqui->email?></td>
-                        <td><?=$enqui->phone?></td>
-                        <td><?=$enqui->message?></td>
                         <td>
-                          <a href="<?=base_url('Delete/enq/'.$enqui->id)?>" onclick="confirmation(event)" class="btn del-btn btn-sm btn-danger mb-1" title="Delete enquiry"><i class="fa fa-trash-alt"></i></a>
+                          <a href="<?=base_url('Delete/subscription/'.$enqui->id)?>" onclick="confirmation(event)" class="btn del-btn btn-sm btn-danger mb-1" title="Delete subscription"><i class="fa fa-trash-alt"></i></a>
                         </td>
                       </tr>
                     <?php }?>
@@ -88,7 +80,7 @@
       "info": true,
       "autoWidth": true,
       "scrollX": true,
-      "order": [[ 5, "asc" ]]
+      "order": [[ 0, "asc" ]]
     });
   });
 </script>

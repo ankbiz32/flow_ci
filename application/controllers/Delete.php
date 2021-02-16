@@ -16,12 +16,41 @@ class Delete extends MY_Controller {
             $status= $this->delete->deleteInfo('events', 'id', $id);
 
             if($status){
-                $this->session->set_flashdata('success','Event deleted!');
+                $this->session->set_flashdata('success','Event deleted');
                 redirect('Admin/events');
             }
             else{
                 $this->session->set_flashdata('failed','Error!');
                 redirect('Admin/events');
+            }
+        }
+
+        public function subscription($id)
+        {
+            $status= $this->delete->deleteInfo('subscriptions', 'id', $id);
+
+            if($status){
+                $this->session->set_flashdata('success','Subscription deleted');
+                redirect('Admin/subscriptions');
+            }
+            else{
+                $this->session->set_flashdata('failed','Error!');
+                redirect('Admin/subscriptions');
+            }
+        }
+
+
+        public function enq($id)
+        {
+            $status= $this->delete->deleteInfo('enquiries', 'id', $id);
+
+            if($status){
+                $this->session->set_flashdata('success','Enquiry deleted');
+                redirect('Admin');
+            }
+            else{
+                $this->session->set_flashdata('failed','Error!');
+                redirect('Admin');
             }
         }
 

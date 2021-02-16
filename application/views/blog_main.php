@@ -35,23 +35,25 @@
             <div class="row ">
                 <div class="col-md-8">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div onclick="redirectTo('<?=base_url()?>Home/blog_post/2')" class="blog-card card mb-4 border-0" style="color:#222">
-                                <img class="card-img-top" src="assets/images/1.jpg" style="object-fit: cover;" height="200" alt="image">
-                                <div class="card-body">
-                                    <h5 class="mb-2"><strong>Heading for the blog will be shown here</strong></h5>
-                                    <small class="text-muted">Category: <a href="" class="cat-link">Mindfullness</a></small>
-                                    <br>
-                                    <small class="text-muted">Posted on: 10-02-2021</small>
-                                    <p class="card-text text-black mt-2">This is a wider card with supporting text below as a natural. . .</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-dark">Read more</button>
+                        <?php foreach($blogs as $b){?>
+                            <div class="col-md-6 mb-5">
+                                <div onclick="redirectTo('<?=base_url('blog/').$b->id.'/'.$b->url_slug?>')" class="blog-card card mb-4 border-0 h-100" style="color:#222">
+                                    <img class="card-img-top" src="<?=base_url()?>assets/images/<?=$b->img?>" style="object-fit: cover;" height="200" alt="image">
+                                    <div class="card-body">
+                                        <h5 class="mb-2"><strong><?=$b->heading?></strong></h5>
+                                        <small class="text-muted">Category: <a href="<?=base_url('blog/category/').$b->cat_id.'/'.$b->category?>" class="cat-link"><?=$b->category?></a></small>
+                                        <br>
+                                        <small class="text-muted">Posted on: <?=date('d-m-Y',strtotime($b->date))?></small>
+                                        <p class="card-text text-black mt-2"><?=(strlen($b->short_descr) > 100) ? substr($b->short_descr,0,100).'...' :$b->short_descr?></p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <a href="<?=base_url('blog/').$b->id.'/'.$b->url_slug?>" class="btn btn-sm btn-outline-dark">Read more</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php }?>
                     </div>
                 </div>
                 <div class="aside col-md-4 pr-sm-0 mt-sm-0 mt-5">
@@ -60,37 +62,28 @@
                             <p class="text-center rounded-3 font-weight-bold bg-dark text-white py-2">Recent posts</p>
                         </div>
                         <div class="card-body p-0">
-                            <a href="" class="card-text mb-3 px-3 d-flex flex-row flex-nowrap align-items-start">
-                                <img src="assets/images/2.jpg" alt="" width="60" height="60" style="object-fit: cover;">
+                        <?php foreach($recent as $r){?>
+                            <a href="<?=base_url('blog/').$r->id.'/'.$r->url_slug?>" class="card-text mb-3 px-3 d-flex flex-row flex-nowrap align-items-start">
+                                <img src="<?=base_url()?>assets/images/<?=$r->img?>" alt="" width="60" height="60" style="object-fit: cover;">
                                 <div class="content ml-3">
-                                    <h6 class="mb-1">Lorem ipsum, dolor sit amet co adipisicing elit. Dolorem, similique!</h6>
-                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
+                                    <h6 class="mb-1"><?=$r->heading?></h6>
+                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; <?=date('d-m-Y',strtotime($r->date))?></small>
                                 </div>
                             </a>
-                            <a href="" class="card-text mb-3 px-3 d-flex flex-row flex-nowrap align-items-start">
-                                <img src="assets/images/2.jpg" alt="" width="60" height="60" style="object-fit: cover;">
-                                <div class="content ml-3">
-                                    <h6 class="mb-1">Lorem ipsum, dolor sit amet co adipisicing elit. Dolorem, similique!</h6>
-                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
-                                </div>
-                            </a>
-                            <a href="" class="card-text mb-3 px-3 d-flex flex-row flex-nowrap align-items-start">
-                                <img src="assets/images/2.jpg" alt="" width="60" height="60" style="object-fit: cover;">
-                                <div class="content ml-3">
-                                    <h6 class="mb-1">Lorem ipsum, dolor sit amet co adipisicing elit. Dolorem, similique!</h6>
-                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
-                                </div>
-                            </a>
-                            <a href="" class="card-text mb-3 px-3 d-flex flex-row flex-nowrap align-items-start">
-                                <img src="assets/images/2.jpg" alt="" width="60" height="60" style="object-fit: cover;">
-                                <div class="content ml-3">
-                                    <h6 class="mb-1">Lorem ipsum, dolor sit amet co adipisicing elit. Dolorem, similique!</h6>
-                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; 10-02-2021</small>
-                                </div>
-                            </a>
+                        <?php }?>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <?php if(isset($pages) && $pages!=''){?>
+                <p class="page-no">Go to page  : &emsp; <?php echo $pages; ?></p>
+            <?php }?>
         </div>
     </main>
+
+    <script>
+        function redirectTo(sUrl) {
+            window.location = sUrl
+        }
+    </script>

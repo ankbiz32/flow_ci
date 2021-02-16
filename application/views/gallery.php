@@ -23,8 +23,8 @@
             <div class="row">
                 <div class="col">
                     <div class="row content">
-                        <a class="col-sm-4 spotlight">
-                            <iframe src="https://www.youtube.com/embed/pZATNcM3yQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <a class="col-sm-12 spotlight main-vid">
+                            <iframe src="https://www.youtube.com/embed/pZATNcM3yQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
                         </a>
                         <?php foreach($gallery as $g){
                             if($g->img_or_vid=='vid'){?>
@@ -37,6 +37,9 @@
                                 </a>
                             <?php } }?>
                     </div>
+                    <?php if(isset($pages) && $pages!=''){?>
+                        <p class="page-no">Go to page  : &emsp; <?php echo $pages; ?></p>
+                    <?php }?>
                 </div>
             </div>
         </div>

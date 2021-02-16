@@ -13,98 +13,75 @@ class GetModel extends CI_Model{
         return $this->db->get('enquiries')->result();
     }
 
-    // Fetch Blogs by order
-    public function getBlogsByOrder()
-    {
-        $this->db->select('*');
-        $this->db->from('blogs b');
-        $this->db->order_by('id','desc');
-        return $blogs_arr= $this->db->get()->result();
-    }
 
-    // Fetch featured Blogs by order
-    public function getFeaturedBlogs()
-    {
-        $this->db->select('*');
-        $this->db->from('blogs b');
-        $this->db->where('featured','1');
-        $this->db->order_by('id','desc');
-        return $this->db->get()->result();
-    }
-
-    // Fetch Announcements
-    public function getAnnouncements()
-    {
-        $this->db->select('*');
-        $this->db->from('announcements');
-        $this->db->order_by('id','desc');
-        return $this->db->get()->result();
-    }
     
-
-    // Count no. of rows in table 
-    public function record_count($table) 
-    {
-        return $this->db->count_all($table);
-    }
-    
-    // Fetch Blogs by order with limit for pagination
-    public function fetch_blogs($limit, $start)
+    // Fetch events items by order with limit for pagination
+    public function fetch_events($limit, $start)
     {
         $this->db->select('*');
-        $this->db->from('blogs b');
+        $this->db->from('events');
         $this->db->order_by('id','desc');
         $this->db->limit($limit, $start);
         $query = $this->db->get();
-        if ($query->num_rows() > 0) {
-            foreach ($query->result() as $row) {
-                $data[] = $row;
-            }
-            return $data;
-        }
-        return false;
-    }
- 
-    // Fetch blog by id
-    public function getBlogById($id)
-    {
-        $this->db->where('id', $id);
-        return $this->db->get('blogs')->row();
+        return $query->result();
     }
 
-    // Fetch blog by id for edit
-    public function getBlogByIdEdit($id)
+    // Fetch gallery items by order with limit for pagination
+    public function fetch_gallery($limit, $start)
     {
         $this->db->select('*');
+        $this->db->from('gallery');
+        $this->db->order_by('id','desc');
+        $this->db->limit($limit, $start);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    // Fetch Blogs by order with limit for pagination
+    public function fetch_blogs($limit, $start)
+    {
+        $this->db->select('b.*, c.category, c.id AS cat_id');
         $this->db->from('blogs b');
-        $this->db->where('id', $id);
-        return $this->db->get()->row();
+        $this->db->join('blog_categories c', 'c.id = b.category_id', 'LEFT');
+        $this->db->order_by('id','desc');
+        $this->db->limit($limit, $start);
+        $query = $this->db->get();
+        return $query->result();
     }
 
-    // Fetch all Notice
-    public function getNotices()
+    public function getBlogsByCat($id)
     {
-        return $this->db->order_by('id','desc')
-                        ->get('notice')
-                        ->result();
+        $items=$this->db->select('b.*, c.category, c.id AS cat_id')
+                ->from('blogs b')
+                ->join('blog_categories c', 'c.id = b.category_id', 'LEFT')
+                ->order_by('b.id','desc')
+                ->where('category_id',$id)
+                ->get()
+                ->result();
+        return $items;
     }
-    
-    // Fetch notice with limit
-    public function getNoticesLimit($lim)
+    public function getBlogsByTag($tag)
     {
-        return $this->db->order_by('id','desc')
-                        ->limit($lim)
-                        ->get('notice')
-                        ->result();
+        $items=$this->db->select('b.*, c.category, c.id AS cat_id')
+                ->from('blogs b')
+                ->join('blog_categories c', 'c.id = b.category_id', 'LEFT')
+                ->order_by('b.id','desc')
+                ->like('tags', $tag)
+                ->get()
+                ->result();
+        return $items;
     }
-
-    // Fetch Notice by id
-    public function getNoticeById($nid)
+    public function getBlog($id)
     {
-        return $this->db->where('id',$nid)
-                        ->get('notice')
-                        ->row();
+        $items=$this->db->select('b.*, c.category, c.id AS cat_id')
+                ->from('blogs b')
+                ->join('blog_categories c', 'c.id = b.category_id', 'LEFT')
+                ->where('b.id',$id)
+                ->get()
+                ->row();
+        return $items;
     }
+ 
 
     // Fetch Admin Profile
     public function getAdminProfile()
@@ -131,6 +108,13 @@ class GetModel extends CI_Model{
     public function getLimitInfo($tbl,$lim)
     {
         return $this->db->order_by('id', 'DESC')->limit($lim)->get($tbl)->result();
+    }
+
+    
+    // Count no. of rows in table 
+    public function record_count($table) 
+    {
+        return $this->db->count_all($table);
     }
 
     

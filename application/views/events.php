@@ -46,6 +46,10 @@
                     </div>
                 </div>
             </div>
+            
+            <?php if(isset($pages) && $pages!=''){?>
+                <p class="page-no">Go to page  : &emsp; <?php echo $pages; ?></p>
+            <?php }?>
         </div>
     </section>
     
