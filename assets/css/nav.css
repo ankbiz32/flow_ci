@@ -303,7 +303,7 @@ header.scrolled label h5{
     width: 130%;
     text-align: left;
     background-color: #eee;
-    padding: 15px 25px;
+    padding: 8px 0px;
     /* z-index: 100 !important; */
     border-radius: 5px;
     opacity: 0;
@@ -320,7 +320,10 @@ header.scrolled label h5{
     cursor: pointer;
   }
   .openDrop .sp{
-    margin-left: 34px !important;
+    margin-left: 48px !important;
+  }
+  .openDrop hr{
+   margin: 2px 0 !important;
   }
   .openDrop a::after{
     display: none;
@@ -378,12 +381,15 @@ header.scrolled label h5{
     }
     .openDrop{
       position: absolute;
-      top: 60px;
+      top: 20px;
       right:60px !important;
-      width: 330px;
+      width: 320px;
+    }
+    .openDrop.dropped{
+      top: 40px;
     }
     .openDrop .sp{
-      margin-left: 25px !important;
+      margin-left: 45px !important;
     }
 
    
