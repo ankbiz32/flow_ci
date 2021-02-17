@@ -113,8 +113,8 @@ class Home extends MY_Controller {
 		$blogs=$this->fetch->fetch_blogs($config["per_page"], $page);
 		$pages = $this->pagination->create_links();
 		$recent=$this->fetch->getLimitInfo('blogs',4);
-		$this->load->view('header',['profile'=>$profile,'blogs'=>$blogs,'pages'=>$pages,'recent'=>$recent
-									]);
+		$categories=$this->fetch->getLimitInfo('blog_categories',9);
+		$this->load->view('header',['profile'=>$profile,'blogs'=>$blogs,'pages'=>$pages,'recent'=>$recent,'categories'=>$categories ]);
 		$this->load->view('blog_main');
 		$this->load->view('footer');
 	}
@@ -124,6 +124,7 @@ class Home extends MY_Controller {
 		$profile=$this->fetch->getWebProfile();
 		$blog=$this->fetch->getBlog($id);
 		$recent=$this->fetch->getLimitInfo('blogs',4);
+		$categories=$this->fetch->getLimitInfo('blog_categories',9);
 		$social_meta='
 			<meta name="og:title" content="'.$blog->heading.'">
 			<meta name="og:description" content="'.substr(trim(strip_tags($blog->short_descr)),0,100).'">
@@ -141,7 +142,7 @@ class Home extends MY_Controller {
 			<meta itemprop="description" content="'.substr(trim(strip_tags($blog->short_descr)),0,100).'">
 			<meta itemprop="image" content="'.base_url("assets/images/").$blog->img.'">
 		';
-		$this->load->view('header',['profile'=>$profile,'blog'=>$blog,'recent'=>$recent,'social_meta'=>$social_meta
+		$this->load->view('header',['profile'=>$profile,'blog'=>$blog,'recent'=>$recent,'social_meta'=>$social_meta,'categories'=>$categories
 									]);
 		$this->load->view('blog_post');
 		$this->load->view('footer');
@@ -152,7 +153,8 @@ class Home extends MY_Controller {
 		$blogs=$this->fetch->getBlogsByCat($id);
 		$category=$this->fetch->getInfoById('blog_categories','id',$id)->category;
 		$recent=$this->fetch->getLimitInfo('blogs',4);
-		$this->load->view('header',['profile'=>$profile,'blogs'=>$blogs,'recent'=>$recent,'category'=>$category
+		$categories=$this->fetch->getLimitInfo('blog_categories',9);
+		$this->load->view('header',['profile'=>$profile,'blogs'=>$blogs,'recent'=>$recent,'category'=>$category,'categories'=>$categories
 									]);
 		$this->load->view('blog_main');
 		$this->load->view('footer');
@@ -163,7 +165,8 @@ class Home extends MY_Controller {
 		$profile=$this->fetch->getWebProfile();
 		$blogs=$this->fetch->getBlogsByTag($tag);
 		$recent=$this->fetch->getLimitInfo('blogs',4);
-		$this->load->view('header',['profile'=>$profile,'blogs'=>$blogs,'recent'=>$recent,'tag'=>$tag
+		$categories=$this->fetch->getLimitInfo('blog_categories',9);
+		$this->load->view('header',['profile'=>$profile,'blogs'=>$blogs,'recent'=>$recent,'tag'=>$tag,'categories'=>$categories
 									]);
 		$this->load->view('blog_main');
 		$this->load->view('footer');

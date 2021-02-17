@@ -63,20 +63,35 @@
                     </div>
                 </div>
                 <div class="aside col-md-4 pr-sm-0 mt-sm-0 mt-5">
-                    <div class="card">
-                        <div class="card-title mb-2">
-                            <p class="text-center rounded-3 font-weight-bold bg-dark text-white py-2">Recent posts</p>
+                    <div class="sidebar">
+                        <div class="card">
+                            <div class="card-title mb-2">
+                                <p class="text-center rounded-3 font-weight-bold bg-dark text-white py-2">Recent posts</p>
+                            </div>
+                            <div class="card-body p-0">
+                            <?php foreach($recent as $r){?>
+                                <a href="<?=base_url('blog/').$r->id.'/'.$r->url_slug?>" class="card-text mb-3 px-3 d-flex flex-row flex-nowrap align-items-start">
+                                    <img src="<?=base_url()?>assets/images/<?=$r->img?>" alt="" width="60" height="60" style="object-fit: cover;">
+                                    <div class="content ml-3">
+                                        <h6 class="mb-1"><?=$r->heading?></h6>
+                                        <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; <?=date('d-m-Y',strtotime($r->date))?></small>
+                                    </div>
+                                </a>
+                            <?php }?>
+                            </div>
                         </div>
-                        <div class="card-body p-0">
-                        <?php foreach($recent as $r){?>
-                            <a href="<?=base_url('blog/').$r->id.'/'.$r->url_slug?>" class="card-text mb-3 px-3 d-flex flex-row flex-nowrap align-items-start">
-                                <img src="<?=base_url()?>assets/images/<?=$r->img?>" alt="" width="60" height="60" style="object-fit: cover;">
-                                <div class="content ml-3">
-                                    <h6 class="mb-1"><?=$r->heading?></h6>
-                                    <small class="text-muted"><i class="far fa-calendar-alt"> </i>&nbsp; <?=date('d-m-Y',strtotime($r->date))?></small>
-                                </div>
-                            </a>
-                        <?php }?>
+
+                        <div class="card mt-3 sidebar-categories">
+                            <div class="card-title mb-0">
+                                <p class="text-center rounded-3 font-weight-bold bg-dark text-white py-2">Categories</p>
+                            </div>
+                            <div class="card-body p-0">
+                            <?php foreach($categories as $cat){?>
+                                <a href="<?=base_url('blog/category/').$cat->id.'/'.$cat->category?>" class="card-text mb-3 px-3 ml-3 d-block">
+                                  -  <?=$cat->category?>
+                                </a>
+                            <?php }?>
+                            </div>
                         </div>
                     </div>
                 </div>

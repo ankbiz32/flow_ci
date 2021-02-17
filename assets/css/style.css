@@ -1402,6 +1402,12 @@ footer hr {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
+.all-blogs .blog-card h5{
+  transition: 0.3s;
+}
+.all-blogs .blog-card:hover h5{
+  color: #0EAEA0;
+}
 .all-blogs .blog-card:active{
   transform: translateY(0px);
   box-shadow: 0 5px 15px rgba(0,0,0,0);
@@ -1428,7 +1434,7 @@ p.page-no strong{
   font-size: 18px;
 }
 
-.aside .card{
+.aside .sidebar{
   position: sticky !important;
   top: 75px !important;
 }
@@ -1444,8 +1450,11 @@ p.page-no strong{
   font-size: 14px;
 }
 .aside .card a:hover{
-  color:#222;
+  color:#0EAEA0;
   transform: translateX(3px);
+}
+.aside .sidebar-categories a{
+  font-size: 14px;
 }
 
 .hero-sec.blog-post-hero {
