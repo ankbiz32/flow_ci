@@ -6,23 +6,28 @@
     <meta name="theme-color" content="#36B8AA">
     <meta name="description" content="Flow - Raipur (CG). (+91) 9766720007">
 
-    <!-- Schema.org for Google -->
-    <meta itemprop="name" content="Flow - Raipur (CG). (+91) 9766720007">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="<?=base_url()?>assets/images/flow-logo.png">
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Flow - Raipur">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:site" content="">
-    <meta name="twitter:image:src" content="<?=base_url()?>assets/images/flow-logo.png">
-    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-    <meta name="og:title" content="Flow - Raipur">
-    <meta name="og:description" content="">
-    <meta name="og:image" content="<?=base_url()?>assets/images/flow-logo.png">
-    <meta name="og:url" content="https://www.flowmenow.com/">
-    <meta name="og:site_name" content="Flow">
-    <meta name="og:type" content="website">
+    <?php if(isset($social_meta)) {?>
+        <?=$social_meta?>
+    <?php } else {?>
+        <!-- Schema.org for Google -->
+        <meta itemprop="name" content="Flow - Raipur (CG). (+91) 9766720007">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="<?=base_url()?>assets/images/flow-logo.png">
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Flow - Raipur">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:site" content="">
+        <meta name="twitter:image:src" content="<?=base_url()?>assets/images/flow-logo.png">
+        <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+        <meta name="og:title" content="Flow - Raipur">
+        <meta name="og:description" content="">
+        <meta name="og:image" content="<?=base_url()?>assets/images/flow-logo.png">
+        <meta name="og:url" content="https://www.flowmenow.com/">
+        <meta name="og:site_name" content="Flow">
+        <meta name="og:type" content="website">
+    <?php }?>
+
 
     <link rel="shortcut icon" href="<?=base_url()?>assets/images/favicon.png" type="image/x-icon">
     <link rel="icon" href="<?=base_url()?>assets/images/favicon.png" sizes="32x32" type="image/png">

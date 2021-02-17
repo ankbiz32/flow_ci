@@ -29,7 +29,7 @@
 
           <li class="nav-item">
             <a href="<?=base_url('Admin/subscriptions')?>" class="nav-link <?php if($this->uri->segment(2)=="subscriptions"){echo ' CustomActive';}?> >">
-              <i class="fas fa-columns nav-icon"></i>
+              <i class="fas fa-rss nav-icon"></i>
               <p>Subscriptions</p>
             </a>
           </li>
@@ -61,6 +61,13 @@
               <p>Gallery</p>
             </a>
           </li>
+
+          <!-- <li class="nav-item">
+            <a href="<?=base_url('Admin/popup')?>" class="nav-link <?php if($this->uri->segment(2)=="popup"){echo ' CustomActive';}?> >">
+              <i class="far fa-clone nav-icon"></i>
+              <p>Popup screen</p>
+            </a>
+          </li> -->
 
           <!-- <li class="nav-item">
             <a href="<?=base_url('Admin/Announcement')?>" class="nav-link <?php if($this->uri->segment(2)=="Announcement"){echo ' CustomActive';}?>">

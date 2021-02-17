@@ -82,6 +82,17 @@ class Admin extends MY_Controller {
                 $this->load->view('admin/adminfooter');  
         }
 
+        public function popup()
+        {
+                $data=$this->fetch->getInfo('popup');
+                $this->load->view('admin/adminheader',['data' => $data,
+                                                        'adminTitle'=>'Popup'
+                                                        ]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/popup'); 
+                $this->load->view('admin/adminfooter');  
+        }
+
         public function webProfile()
         {
                 $profile=$this->fetch->getWebProfile();

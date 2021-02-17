@@ -6,8 +6,8 @@
                 <h1>Welcome to our blog</h1>
                 <h4></h4>
                 <p class="mt-4 mb-5 mx-auto">It all began with a question, ‘What was something that was not a part of my education, but I wish it was!’</p>
-                <a href="#about" id="nextPage" class="link">
-                    <small class="text-dark">READ MORE</small>
+                <a href="#allBlogs" id="nextPage" class="link">
+                    <small class="text-dark">SEE OUR BLOGS</small>
                     <div class="mouse">
                         <span class="m_scroll_arrows unu"></span>
                         <span class="m_scroll_arrows doi"></span>
@@ -30,8 +30,14 @@
         }
     </style>
 
-    <main class="all-blogs">
+    <main class="all-blogs" id="allBlogs">
         <div class="container">
+        <?php if(isset($category)) { ?>
+            <h4 class="mb-5 text-center"><strong>Blogs under category "<?=$category?>"</strong></h4>
+        <?php } ?>
+        <?php if(isset($tag) && $tag!='') { ?>
+            <h4 class="mb-5 text-center"><strong>Blogs with tag "<?=$tag?>"</strong></h4>
+        <?php } ?>
             <div class="row ">
                 <div class="col-md-8">
                     <div class="row">

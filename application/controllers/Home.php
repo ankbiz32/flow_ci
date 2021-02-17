@@ -14,9 +14,11 @@ class Home extends MY_Controller {
 		$gallery=$this->fetch->getLimitInfo('gallery',5);
 		$events=$this->fetch->getLimitInfo('events',4);
 		$feedbacks=$this->fetch->getInfo('feedbacks');
+		$popup=$this->fetch->getInfo('popup');
 		$this->load->view('header',['profile'=>$profile , 
 									'gallery' => $gallery,
 									'events'=> $events,
+									'popup'=> $popup[0],
 									'feedbacks'=> $feedbacks
 									]);
 		$this->load->view('home');
@@ -122,7 +124,24 @@ class Home extends MY_Controller {
 		$profile=$this->fetch->getWebProfile();
 		$blog=$this->fetch->getBlog($id);
 		$recent=$this->fetch->getLimitInfo('blogs',4);
-		$this->load->view('header',['profile'=>$profile,'blog'=>$blog,'recent'=>$recent
+		$social_meta='
+			<meta name="og:title" content="'.$blog->heading.'">
+			<meta name="og:description" content="'.substr(trim(strip_tags($blog->short_descr)),0,100).'">
+			<meta name="og:image" content="'.base_url("assets/images/").$blog->img.'">
+			<meta name="og:url" content="'.base_url().'">
+			<meta name="og:site_name" content="FLOW">
+
+			<meta name="twitter:card" content="summary">
+			<meta name="twitter:title" content="'.$blog->heading.'">
+			<meta name="twitter:description" content="'.substr(trim(strip_tags($blog->short_descr)),0,100).'">
+			<meta name="twitter:site" content="">
+			<meta name="twitter:image" content="'.base_url("assets/images/").$blog->img.'">
+
+			<meta itemprop="name" content="'.$blog->heading.'">
+			<meta itemprop="description" content="'.substr(trim(strip_tags($blog->short_descr)),0,100).'">
+			<meta itemprop="image" content="'.base_url("assets/images/").$blog->img.'">
+		';
+		$this->load->view('header',['profile'=>$profile,'blog'=>$blog,'recent'=>$recent,'social_meta'=>$social_meta
 									]);
 		$this->load->view('blog_post');
 		$this->load->view('footer');
@@ -140,6 +159,7 @@ class Home extends MY_Controller {
 	}
 
 	public function blogTag($tag){
+		$tag = urldecode($tag);
 		$profile=$this->fetch->getWebProfile();
 		$blogs=$this->fetch->getBlogsByTag($tag);
 		$recent=$this->fetch->getLimitInfo('blogs',4);

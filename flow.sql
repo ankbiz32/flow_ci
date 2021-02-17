@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2021 at 06:58 PM
+-- Generation Time: Feb 17, 2021 at 07:56 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -47,30 +47,7 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `heading`, `short_descr`, `date`, `img`, `content`, `url_slug`, `tags`, `category_id`, `authors_id`, `created_at`, `updated_at`) VALUES
-(25, 'Security rules to be made more strict by IT industries.', 'Some little description will be shown here with a lot of helping text for the blog', '2020-02-27 18:30:00', '2.jpg', '<p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">Whichever country we may live in, we always have a special place for our mother lands. The economic condition of the country plays a massive role in our lives. However, there are people who always criticize the country and its government for not doing enough. Through this blog, I intend to encourage the youth to act instead of criticizing. Act for what you don’t like, change it.</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">But, the importance of the country’s economic condition needs to be understood for anyone to get encouraged. I have tried doing this by comparing personal growth to economic development. This will help you relate to the country and its economy in a better way. Because we need to stand in someone else’s shoes to understand their situation, right?</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">We all know what does personal growth and economic development means separately. But, have you ever thought that both of these concepts work on similar lines? As in, if you have some personal goals, the economy has it too. Let’s see more about this similarity below.</p><p style=\"padding: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; line-height: 1.8;\">Let’s take Rostow’s economic growth model for the comparison. Walt Whitman Rostow was an economic historian and according to him, there are five stages in economic growth. The stages are:</p>', 'fvdf', 'tag2|vdv', 1, 0, '2021-02-11 17:46:34', '2021-02-11 17:46:34'),
-(33, 'Blog 1 heading lorem ipsum set dolor set dorset', '', '2021-02-17 18:30:00', 'fb.jpg', '<p>afdefefew</p><p>fwe 4 44t 4t</p>', 'blog-1-heading-lorem-ipsum-set-dolor-set-dorset', 'asd|vdvfv', 7, NULL, '2021-02-16 15:32:37', '2021-02-16 15:32:37'),
-(34, 'School re-opening on 08-June-2020. School re-opening on 08-June-2020. School re-opening on 08-June-2', '', '2021-02-27 18:30:00', 'insta.jpg', '<p>sgrg</p>', 'school-re-opening-on-08-june-2020-school-re-opening-on-08-june-2020-school-re-opening-on-08-june-2', 'tag1|asd', 5, NULL, '2021-02-16 15:32:56', '2021-02-16 15:32:56'),
-(35, 'How is Your Personal Growth and The Economic Development Similar?', 'dscdsv', '2021-02-17 18:30:00', 'whatsapp.jpg', '<p>gdfg</p>', 'how-is-your-personal-growth-and-the-economic-development-similar', 'tag1|tag2|tag3', 6, NULL, '2021-02-16 15:33:28', '2021-02-16 15:33:28'),
-(36, 'Insta2 with another heading', '', '2021-02-12 18:30:00', 'insta1.jpg', '<p>sdsf</p>', 'insta2-with-another-heading', NULL, 6, NULL, '2021-02-16 15:33:56', '2021-02-16 15:33:56');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `blog_authors`
---
-
-CREATE TABLE `blog_authors` (
-  `id` int(11) NOT NULL,
-  `author` varchar(1024) NOT NULL,
-  `author_date` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `blog_authors`
---
-
-INSERT INTO `blog_authors` (`id`, `author`, `author_date`) VALUES
-(107, 'Ankur', '2020-01-24 10:08:03');
+(1, 'Belly Breathing (For teachers) ', 'A Simple 5 Minutes Stress Buster Technique', '2021-02-03 18:30:00', 'Picture11.png', '<p class=\"MsoNormal\"><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">If you find yourself stressed often, here is a small tool to help you calm down.</span></p><p class=\"MsoNormal\"><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">When was the last time you sat down and focused all your attention on nothing but just your breath?</span></p><p class=\"MsoNormal\"><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">Life may be full of stress, tension, worries and what not! You follow your daily routine, maintain expenses, keep up with the expectations of the people around you, which isn’t always an easy task. And, at the end of the day, you find yourself on your bed to finally get some rest. But, that doesn’t relieve you from your mental tension and stress, does it?</span></p><p class=\"MsoNormal\"><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">Regardless of all the tension and worries around you, did you know, there is something that you can do to relieve you from the stress and tension of the outer world? It is a simple exercise called </span><b><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;mso-ansi-font-weight:bold;\r\nfont-size:12.0000pt;\">‘Belly Breathing’. </span></b><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">Nothing too complicated, you just have to follow some simple steps and focus your attention on your breathing!&nbsp;&nbsp;</span></p><p class=\"MsoNormal\"><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">Let’s try it!</span></p><p class=\"MsoNormal\" style=\"margin-left:36.0000pt;text-indent:-18.0000pt;mso-list:l0 level1 lfo1;\"><!--[if !supportLists]--><span style=\"font-family:Arial;font-size:12.0000pt;\">1)&nbsp;</span><!--[endif]--><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">Sit in a relaxed position.</span><span style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin-left:36.0000pt;text-indent:-18.0000pt;mso-list:l0 level1 lfo1;\"><!--[if !supportLists]--><span style=\"font-family:Arial;font-size:12.0000pt;\">2)&nbsp;</span><!--[endif]--><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">Now, close your eyes and bring your focus to your breath. </span><span style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin-left:36.0000pt;text-indent:-18.0000pt;mso-list:l0 level1 lfo1;\"><!--[if !supportLists]--><span style=\"font-family:Arial;font-size:12.0000pt;\">3)&nbsp;</span><!--[endif]--><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">Notice the inflow and outflow of your breath. Observe your breath. You don’t have to control it, just observe it. What is it telling you about you?</span><span style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin-left:36.0000pt;text-indent:-18.0000pt;mso-list:l0 level1 lfo1;\"><!--[if !supportLists]--><span style=\"font-family:Arial;font-size:12.0000pt;\">4)&nbsp;</span><!--[endif]--><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">Now place one hand on your chest and the other on your belly. </span><span style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin-left:36.0000pt;text-indent:-18.0000pt;mso-list:l0 level1 lfo1;\"><!--[if !supportLists]--><span style=\"font-family:Arial;font-size:12.0000pt;\">5)&nbsp;</span><!--[endif]--><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">Visualise the breath flowing in from your nose going all the way down to your belly. Hold it there for 3 seconds. With each inhale, invite joy, peace and happiness into your body.</span><span style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin-left:36.0000pt;text-indent:-18.0000pt;mso-list:l0 level1 lfo1;\"><!--[if !supportLists]--><span style=\"font-family:Arial;font-size:12.0000pt;\">6)&nbsp;</span><!--[endif]--><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">Slowly exhale the held breath in your belly, out from your feet and toes carrying with it all the stress, tension, anxiety or any discomfort stored in the body, slowly calming it down.</span><span style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin-left:36.0000pt;text-indent:-18.0000pt;mso-list:l0 level1 lfo1;\"><!--[if !supportLists]--><span style=\"font-family:Arial;font-size:12.0000pt;\">7)&nbsp;</span><!--[endif]--><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">Repeat it till you feel charged. Allow the freshness of life in your body with each inhale and release all that is heavy with each exhale.</span><span style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin-left:36.0000pt;text-indent:-18.0000pt;mso-list:l0 level1 lfo1;\"><!--[if !supportLists]--><span style=\"font-family:Arial;font-size:12.0000pt;\">8)&nbsp;</span><!--[endif]--><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">Do this for 5 minutes, then take 3 long breaths before you slowly open your eyes. </span><span style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin-left:0.0000pt;text-indent:0.0000pt;\"><br></p><p class=\"MsoNormal\" style=\"margin-left:0.0000pt;text-indent:0.0000pt;\"><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">Check with yourself and see how you feel after the belly breathing exercise.</span></p><p class=\"MsoNormal\" style=\"margin-left:0.0000pt;text-indent:0.0000pt;\"><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">With this small activity, you can take a break from your daily routine, relaxing and recharging yourself. Doing this activity will not sway away your life problems, but it will surely help you to tackle them with a peaceful mind.</span></p><p class=\"MsoNormal\" style=\"margin-left:0.0000pt;text-indent:0.0000pt;\"><span dir=\"LTR\" style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\">So, the next time you find yourself messed up in the doldrums of life, take out 5 minutes of your time and practice Belly Breathing!&nbsp;</span><span style=\"mso-spacerun:\'yes\';font-family:Arial;font-size:12.0000pt;\"><o:p></o:p></span></p>', 'belly-breathing-for-teachers', 'Breathing|Diaphragmatic breathing|Exercise|mental health|Mindfulness in plain English|Mindfulness for teachers|Mindfulness for stress', 9, NULL, '2021-02-17 05:10:06', '2021-02-17 05:10:06');
 
 -- --------------------------------------------------------
 
@@ -98,28 +75,6 @@ INSERT INTO `blog_categories` (`id`, `category`, `category_date`) VALUES
 (7, 'category7', '2021-02-13 18:03:16'),
 (8, 'category8', '2021-02-13 18:03:16'),
 (9, 'category9', '2021-02-13 18:03:16');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `blog_tags`
---
-
-CREATE TABLE `blog_tags` (
-  `id` int(11) NOT NULL,
-  `tag` varchar(1024) NOT NULL,
-  `tag_date` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `blog_tags`
---
-
-INSERT INTO `blog_tags` (`id`, `tag`, `tag_date`) VALUES
-(1, 'writing', '2020-01-19 11:52:03'),
-(2, 'social media marketing', '2020-01-19 11:52:03'),
-(3, 'web', '2020-01-19 11:52:24'),
-(4, 'digital marketing', '2020-01-19 11:52:24');
 
 -- --------------------------------------------------------
 
@@ -161,8 +116,8 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `heading`, `img_src`, `short_descr`, `full_descr`, `date`, `venue`, `created_at`, `updated_at`) VALUES
-(4, 'h1fefef wrrf wfw h1fefef wrrf wfw h1fefef wrrf wfw ', 'insta2.jpg', 'kuhiun h hui huih ui', '<p>uhnh98yn98eyfw 3435g</p><p>t 35 35y54y</p><p>54 y54y 66u6 4</p><p>553h1fefef wrrf wfw&nbsp;h1fefef wrrf wfw&nbsp;h1fefef wrrf wfw&nbsp;h1fefef wrrf wfw&nbsp;&nbsp;h1fefef wrrf wfw&nbsp;h1fefef wrrf wfw&nbsp;</p>', '21-02-21', 'sgregre 3t g egegrezvsvrbe gtegeergerg erg', '2021-02-16 17:49:19', '2021-02-16 17:49:19'),
-(5, 'How is Your Personal Growth', 'fb1.jpg', 'u6u6u 6u', '<p><span style=\"background-color: rgb(255, 255, 0);\">h1fefef wrrf wfw&nbsp;h1fefef wrrf wfw&nbsp;</span></p><p><span style=\"background-color: rgb(255, 255, 0);\">&nbsp; &nbsp;</span></p>', '5vy-506- yrt ', 'sgregre 3t g egegrezvsvrbe gtegeergerg erg', '2021-02-16 17:49:44', '2021-02-16 17:49:44');
+(1, 'Happiness and Well-being Workshop', 'event11.png', '', '<p class=\"MsoNormal\"><span dir=\"LTR\" style=\"\">Flow is all set to deliver a fun-packed session on happiness and well-being, which aims at re-energizing everyone’s waning spirits after having experienced a long period of isolation. This training program projects at giving new insights into the concept of happiness through various activities. Not only this, but every person attending the program is sure to get a space to explore, reflect and share their own personal ideas of happiness. Adding to the above there will be sharing of tools that the teachers can carry for lifetime to reorient and prioritize different aspects of their lives and well-being.</span></p><p class=\"MsoNormal\" style=\"margin-bottom:8.0000pt;line-height:106%;\"><span dir=\"LTR\" style=\"line-height: 106%;\">What to expect?</span><span style=\"line-height: 106%;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin-bottom: 0pt; margin-left: 36pt; line-height: 106%;\"><!--[if !supportLists]-->-&nbsp;<!--[endif]--><span dir=\"LTR\" style=\"line-height: 106%;\">Experiential learning</span><span style=\"line-height: 106%;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin-bottom: 0pt; margin-left: 36pt; line-height: 106%;\"><!--[if !supportLists]-->-&nbsp;<!--[endif]--><span dir=\"LTR\" style=\"line-height: 106%;\">Sharing of thoughts</span><span style=\"line-height: 106%;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin-bottom: 0pt; margin-left: 36pt; line-height: 106%;\"><!--[if !supportLists]-->-&nbsp;<!--[endif]--><span dir=\"LTR\" style=\"line-height: 106%;\">Fun packed activities</span><span style=\"line-height: 106%;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin-bottom: 0pt; margin-left: 36pt; line-height: 106%;\"><!--[if !supportLists]-->-&nbsp;<!--[endif]--><span dir=\"LTR\" style=\"line-height: 106%;\">Tips and tricks for overall well-being. </span><span style=\"line-height: 106%;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin-bottom: 8pt; margin-left: 36pt; line-height: 106%;\"><!--[if !supportLists]-->-&nbsp;<!--[endif]--><span dir=\"LTR\" style=\"line-height: 106%;\">Timeless tools to navigate life</span><span style=\"line-height: 106%;\"><o:p></o:p></span></p><p class=\"MsoNormal\"><span dir=\"LTR\"></span></p><p class=\"MsoNormal\" style=\"margin-bottom: 8pt; margin-left: 0pt; line-height: 106%;\"><span dir=\"LTR\" style=\"line-height: 106%;\">Tap into the Flow for more fun and exciting events.</span></p><p class=\"MsoNormal\" style=\"margin-bottom: 8pt; margin-left: 0pt; line-height: 106%;\"><span dir=\"LTR\" style=\"line-height: 106%;\"></span><span style=\"line-height: 106%;\"><o:p></o:p></span></p><p class=\"MsoNormal\"><span dir=\"LTR\" style=\"\">Facilitator’s name</span><span dir=\"LTR\" style=\"\">:&nbsp;<b>Mr. </b></span><span dir=\"LTR\" style=\"\"><b>Jenis Lunkad</b></span></p><p class=\"MsoNormal\"><span dir=\"LTR\" style=\"font-size: 13.6px;\"><span style=\"font-size: 13.6px;\">Co-facilitators</span>:&nbsp;<span style=\"font-weight: bolder;\">Mr.&nbsp;</span></span><span dir=\"LTR\" style=\"font-size: 13.6px;\"><span style=\"font-weight: bolder;\">Calvin Cubbins, Mrs. Raveena Bhui</span></span></p>', '31st January 2021', 'B.P Pujari English Medium School (Raipur)', '2021-02-17 04:58:22', '2021-02-17 04:58:22'),
+(2, 'Free to Learn Our Way Program Launch', NULL, '', '<p class=\"p\" align=\"justify\" style=\"margin-top: 0pt; margin-bottom: 8pt;\"><span style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\"><b>FLOW</b> invites all the principals and coordinators of all the renowned schools of Jagdalpur to experience the program and get a glimpse of the journey that we are to embark on. <b>FLOW </b>began with a question,</span><span style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\">&nbsp;</span><span style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\">‘What was something that was not a part of my education, but I wish it was!’, and from then on, we are constantly striving to serve the future generations by adding every possible element of life that is of utmost importance.&nbsp;</span><o:p></o:p></p><p class=\"p\" align=\"justify\" style=\"margin-top: 0pt; margin-bottom: 8pt;\"><span style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\">FLOW does not only cater to one side of the coin, which is why we have also addressed the needs of the facilitators through the WOLF initiative program (Workshop on Learning and Facilitation) which is a mirror image of ‘FLOW’ as students are a mirror reflection of the teachers that tutor them for life.</span><o:p></o:p></p><p class=\"p\" align=\"justify\" style=\"margin-top: 0pt; margin-bottom: 8pt;\"><span style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\">The WOLF initiative program was created with an intent to provide the teachers an underpinning insight about purposeful teaching methods, soft skills development, lesson planning, phonetics, and work-life balance etc.&nbsp; We assure you these sessions cover just the tip of the iceberg.&nbsp;</span><o:p></o:p></p><p class=\"p\" align=\"justify\" style=\"margin-top: 0pt; margin-bottom: 8pt;\"><span style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\">The entire team at FLOW will be honored by your presence and we sincerely await your arrival. To get in touch with us and be a part of our program launch, kindly register at the link given below.</span></p>', '6th February 2021', 'TBA (Jagdalpur)', '2021-02-17 05:02:02', '2021-02-17 05:02:02');
 
 -- --------------------------------------------------------
 
@@ -185,7 +140,10 @@ CREATE TABLE `feedbacks` (
 
 INSERT INTO `feedbacks` (`id`, `name`, `help_text`, `message`, `created_at`, `updated_at`) VALUES
 (1, 'Mr. Gaurav Kiran', 'Teaching experience: 2.5+ years', 'I liked it very much, the whole program was well organized, the meditation and group activities part was amazing. This program can help students be more social and practical about their life.!', '2021-02-11 07:25:42', '2021-02-11 07:25:42'),
-(2, 'Mrs.Anju Sood (Principal)', 'Teaching experience: 34+ Years', 'An excellent program for teachers & students. It can aid schools in preparing the students to navigate the downsides and difficulties of life. It is a program that will definitely make a positive impact.', '2021-02-11 07:26:30', '2021-02-11 07:26:30');
+(2, 'Mrs.Anju Sood (Principal)', 'Teaching experience: 34+ years', 'An excellent program for teachers & students. It can aid schools in preparing the students to navigate the downsides and difficulties of life. It is a program that will definitely make a positive impact.', '2021-02-11 07:26:30', '2021-02-11 07:26:30'),
+(5, 'Mrs. Laxmi Purana', 'Teaching experience: 15+ years', 'The training was engaging. It works on the social and emotional development of teachers and students alike. This program can help students be ready for what’s to come ahead.', '2021-02-17 04:49:58', '2021-02-17 04:49:58'),
+(6, 'Garima singh', 'Teaching experience: 6+ years', 'The session was nice and refreshing. The program will have a great impact on the holistic development of all. I would recommend the program for the overall personality development of students and they can feel more confident about themselves.\r\nVery happy with the initiative and your dedication and passion towards the cause. Keep up the good work!', '2021-02-17 04:50:41', '2021-02-17 04:50:41'),
+(7, 'Mrs.Shubhangi Maheshwari', '&nbsp;', 'I would recommend the program, especially the 9 modules for the students. It will help students in a holistic way adding to the academic studies inculcated in schools.', '2021-02-17 04:51:41', '2021-02-17 04:51:41');
 
 -- --------------------------------------------------------
 
@@ -216,24 +174,23 @@ INSERT INTO `gallery` (`id`, `img_src`, `caption`, `img_or_vid`, `created_at`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notice`
+-- Table structure for table `popup`
 --
 
-CREATE TABLE `notice` (
+CREATE TABLE `popup` (
   `id` int(11) NOT NULL,
-  `content` text NOT NULL,
-  `date` date NOT NULL,
-  `file_src` varchar(500) NOT NULL,
-  `link_src` varchar(1024) NOT NULL,
-  `file_or_link` varchar(10) NOT NULL
+  `date` timestamp NULL DEFAULT current_timestamp(),
+  `img_src` varchar(500) NOT NULL,
+  `link` varchar(2000) NOT NULL DEFAULT '#',
+  `status` tinyint(4) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `notice`
+-- Dumping data for table `popup`
 --
 
-INSERT INTO `notice` (`id`, `content`, `date`, `file_src`, `link_src`, `file_or_link`) VALUES
-(1, 'Some announcement heres', '2020-03-05', 'g1.jpg', '', 'f');
+INSERT INTO `popup` (`id`, `date`, `img_src`, `link`, `status`) VALUES
+(1, '2020-03-04 18:30:00', 'popup.jpeg', '', 0);
 
 -- --------------------------------------------------------
 
@@ -310,21 +267,9 @@ ALTER TABLE `blogs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `blog_authors`
---
-ALTER TABLE `blog_authors`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `blog_categories`
 --
 ALTER TABLE `blog_categories`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `blog_tags`
---
-ALTER TABLE `blog_tags`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -352,9 +297,9 @@ ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `notice`
+-- Indexes for table `popup`
 --
-ALTER TABLE `notice`
+ALTER TABLE `popup`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -383,13 +328,7 @@ ALTER TABLE `webprofile`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
-
---
--- AUTO_INCREMENT for table `blog_authors`
---
-ALTER TABLE `blog_authors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `blog_categories`
@@ -398,28 +337,22 @@ ALTER TABLE `blog_categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT for table `blog_tags`
---
-ALTER TABLE `blog_tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT for table `enquiries`
 --
 ALTER TABLE `enquiries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `feedbacks`
 --
 ALTER TABLE `feedbacks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `gallery`
@@ -428,16 +361,16 @@ ALTER TABLE `gallery`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `notice`
+-- AUTO_INCREMENT for table `popup`
 --
-ALTER TABLE `notice`
+ALTER TABLE `popup`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `subscriptions`
 --
 ALTER TABLE `subscriptions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

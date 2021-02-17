@@ -1,22 +1,25 @@
 
-    <!-- <script>
-        $(document).ready(function(){
-            setTimeout(function () {
-                $("#adModal").modal('show');
-            }, 3000);
-        });
-    </script>
+    <?php if($popup->status==1){?>
+        <script>
+                $(document).ready(function(){
+                    setTimeout(function () {
+                        $("#adModal").modal('show');
+                    }, 3000);
+                });
+            </script>
 
-    <div id="adModal" class="modal fade">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content rounded-0">
-                <div class="modal-header p-0">
-                    <img src="<?=base_url()?>assets/images/16.jpeg" alt="" style="width: 100%; height: unset;">
-                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+            <div id="adModal" class="modal fade">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content rounded-0">
+                        <div class="modal-header p-0">
+                            <img src="<?=base_url()?>assets/images/<?=$popup->img_src?>" alt="" style="width: 100%; height: unset;">
+                            <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div> -->
+    <?php }?>
+    
 
     <section class="hero-sec">
         <div class="container">

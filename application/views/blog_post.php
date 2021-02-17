@@ -25,6 +25,9 @@
         body{
             overflow: unset;
         }
+        article *{
+            font-family: "poppins" , 'Segoe UI', Tahoma, Verdana, sans-serif !important;
+        }
     </style>
 
     <main class="all-blogs" id="post">

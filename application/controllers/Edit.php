@@ -374,16 +374,44 @@ class Edit extends MY_Controller {
             }
         }
 
-
-
-        public function enqStatus($id)
+        
+        public function popupImg($id)
         {
-            $status= $this->edit->updateEnqStatus($id);
-            if($status){
-                redirect('Admin');
+            if( $_FILES['img']['name']!=null ){
+                $path ='assets/images';
+                $initialize = array(
+                    "upload_path" => $path,
+                    "allowed_types" => "jpg|jpeg|png|bmp|webp",
+                    "remove_spaces" => TRUE,
+                    "file_name" => "popup.jpeg",
+                    "overwrite" => TRUE
+                );
+                $this->load->library('upload', $initialize);
+                if (!$this->upload->do_upload('img')) {
+                    $this->session->set_flashdata('failed',$this->upload->display_errors());
+                    redirect('Admin/popup');
+                }
+                else {
+                    $this->session->set_flashdata('success','Image updated !' );
+                    redirect('Admin/popup');
+                } 
             }
             else{
-                redirect('Admin');
+                $this->session->set_flashdata('failed','Please upload an image');
+                redirect('Admin/popup');
+            }
+        }
+
+        public function popupStatus($id, $status)
+        {
+            $status= $this->edit->updateInfo(['status'=>$status],'popup','id',$id);
+            if($status){
+                $this->session->set_flashdata('success','Status updated');
+                redirect('Admin/popup');
+            }
+            else{
+                $this->session->set_flashdata('failed','Error !');
+                redirect('Admin/popup');
             }
         }
 
