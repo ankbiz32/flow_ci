@@ -91,7 +91,7 @@
                 </div>
                 <a href="<?=base_url('gallery')?>" class="main-link">GALLERY</a>
                 <a href="<?=base_url('blog')?>" class="main-link">BLOG</a>
-                <a href="<?=base_url('contact-us')?>" class="main-link">CONTACT</a>
+                <a href="<?=base_url('contact-us')?>" class="main-link nav-contact-link">CONTACT</a>
             </nav>
         </div>
     </header>

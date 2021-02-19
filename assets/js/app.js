@@ -10,7 +10,7 @@ $(function () {
 // Feedbacks slider
 $('.feedback-container').owlCarousel({
     nav:true,
-    loop:false,
+    loop:true,
     dots:false,
     autoplay:true,
     autoplayTimeout:5000,

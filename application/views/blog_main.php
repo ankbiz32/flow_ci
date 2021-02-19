@@ -5,7 +5,7 @@
             <div class="intro">
                 <h1>Welcome to our blog</h1>
                 <h4></h4>
-                <p class="mt-4 mb-5 mx-auto">It all began with a question, ‘What was something that was not a part of my education, but I wish it was!’</p>
+                <p class="mt-4 mb-5 mx-auto">&nbsp;</p>
                 <a href="#allBlogs" id="nextPage" class="link">
                     <small class="text-dark">SEE OUR BLOGS</small>
                     <div class="mouse">
@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="aside col-md-4 pr-sm-0 mt-sm-0 mt-5">
-                    <div class="sidebar">
+                    <div class="sidebar col-md-11 ml-auto">
                         <div class="card">
                             <div class="card-title mb-2">
                                 <p class="text-center rounded-3 font-weight-bold bg-dark text-white py-2">Recent posts</p>
@@ -87,9 +87,12 @@
                             </div>
                             <div class="card-body p-0">
                             <?php foreach($categories as $cat){?>
-                                <a href="<?=base_url('blog/category/').$cat->id.'/'.$cat->category?>" class="card-text mb-3 px-3 ml-3 d-block">
-                                  -  <?=$cat->category?>
-                                </a>
+                                <div class="d-flex align-items-start px-3 ml-1 mb-3">
+                                    <span class="fancy-bullet mr-2">&nbsp;</span>
+                                    <a href="<?=base_url('blog/category/').$cat->id.'/'.$cat->category?>" class="card-text d-block">
+                                       <?=$cat->category?>
+                                    </a>
+                                </div>
                             <?php }?>
                             </div>
                         </div>

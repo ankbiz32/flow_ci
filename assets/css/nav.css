@@ -345,6 +345,11 @@ header.scrolled label h5{
     pointer-events: all ;
   }
 
+  .nav-contact-link{
+    margin-left: 5px;
+    font-size: 19px;
+  }
+
 
 
 
